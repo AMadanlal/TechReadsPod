@@ -16,10 +16,10 @@ public class ChickenCoopAPI {
   }
 
 //  class variables
-  var searchItem: String = ""
+  public var searchItem: String = ""
   public var gamePlatform: String = "pc" //this is made public in order for the other class to modify it
-  var gamedetails = Game()
-  var gamelist = GameList()
+  public var gamedetails = Game()
+  public var gamelist = GameList()
 //  this is the headers that include the host and the unique key given to a user to access the api
   let headers = ["x-rapidapi-host": "chicken-coop.p.rapidapi.com",
                   "x-rapidapi-key": "20e0c6a126msh31a394fe35837d8p1d97f3jsn9bf6099a1b56"]
