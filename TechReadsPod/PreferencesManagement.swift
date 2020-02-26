@@ -8,7 +8,6 @@
 
 import Foundation
 
-public class FileManagement {
   public let file = "UserMedium.txt" //this is the name of the file for the user medium
   public let genrefile = "UserGenres.txt" //this is the name of the file with the user genres
      //      this is to load the data from the file
@@ -63,4 +62,3 @@ public class FileManagement {
        }
   }
   
-}
