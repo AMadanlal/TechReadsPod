@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		35EEDF5168939519F3466943 /* Pods_TechReadsPod.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DB2B6D9F56AEA0E346BF75 /* Pods_TechReadsPod.framework */; };
+		D3037F2324062EC000123532 /* PreferencesManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3037F2224062EC000123532 /* PreferencesManagement.swift */; };
 		D39BC9A824053CE9001C5EDE /* ChickenCoopAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39BC9A724053CE9001C5EDE /* ChickenCoopAPI.swift */; };
 		D3DC3D6E240501C800D28DEA /* TechReadsPod.h in Headers */ = {isa = PBXBuildFile; fileRef = D3DC3D6C240501C800D28DEA /* TechReadsPod.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D3DC3D752405060000D28DEA /* StructPod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DC3D742405060000D28DEA /* StructPod.swift */; };
@@ -16,6 +17,7 @@
 /* Begin PBXFileReference section */
 		1F4D8D47E04DB46A3E5121DC /* Pods-TechReadsPod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TechReadsPod.release.xcconfig"; path = "Target Support Files/Pods-TechReadsPod/Pods-TechReadsPod.release.xcconfig"; sourceTree = "<group>"; };
 		2FBD5118F33F151E961F3B6F /* Pods-TechReadsPod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TechReadsPod.debug.xcconfig"; path = "Target Support Files/Pods-TechReadsPod/Pods-TechReadsPod.debug.xcconfig"; sourceTree = "<group>"; };
+		D3037F2224062EC000123532 /* PreferencesManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesManagement.swift; sourceTree = "<group>"; };
 		D39BC9A724053CE9001C5EDE /* ChickenCoopAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChickenCoopAPI.swift; sourceTree = "<group>"; };
 		D3DC3D69240501C800D28DEA /* TechReadsPod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TechReadsPod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3DC3D6C240501C800D28DEA /* TechReadsPod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TechReadsPod.h; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				D3DC3D6D240501C800D28DEA /* Info.plist */,
 				D3DC3D742405060000D28DEA /* StructPod.swift */,
 				D39BC9A724053CE9001C5EDE /* ChickenCoopAPI.swift */,
+				D3037F2224062EC000123532 /* PreferencesManagement.swift */,
 			);
 			path = TechReadsPod;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3DC3D752405060000D28DEA /* StructPod.swift in Sources */,
+				D3037F2324062EC000123532 /* PreferencesManagement.swift in Sources */,
 				D39BC9A824053CE9001C5EDE /* ChickenCoopAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
