@@ -8,7 +8,7 @@
 import UIKit
 import Foundation
 
-func todisplay(gamemodel: Game, titlelabel: UILabel, textview: UITextView, imageplace: UIImageView) {
+public func todisplay(gamemodel: Game, titlelabel: UILabel, textview: UITextView, imageplace: UIImageView) {
      titlelabel.text = gamemodel.title
  //this part formats the different string arrays better
      var simplifiedgenrestring = ""
