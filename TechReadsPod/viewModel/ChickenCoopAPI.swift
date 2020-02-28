@@ -24,8 +24,9 @@ public class ChickenCoopAPI {
   let headers = ["x-rapidapi-host": "chicken-coop.p.rapidapi.com",
                   "x-rapidapi-key": "20e0c6a126msh31a394fe35837d8p1d97f3jsn9bf6099a1b56"]
 
-  public init(searched: String) {
+  public init(searched: String, platform: String) {
     searchItem = searched
+    gamePlatform = platform
   }
 
 //  this gets the individual game information
