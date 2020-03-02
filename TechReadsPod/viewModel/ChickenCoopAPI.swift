@@ -35,6 +35,7 @@ public class ChickenCoopAPI {
     let request = NSMutableURLRequest(url: NSURL(
       string: "https://chicken-coop.p.rapidapi.com/games/\(searchItem)?platform=\(gamePlatform)")! as URL,
                                       cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
+    print(request.url as Any)
     request.httpMethod = "GET"
     request.allHTTPHeaderFields = headers
 //    create the session
