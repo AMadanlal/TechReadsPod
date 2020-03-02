@@ -54,6 +54,7 @@ public class ChickenCoopAPI {
         completionHandler(.success(gameresponsedetails))
         //the previous line allows values obtained when doing async instructions to be returned
         } catch {
+          print(jsonData)
           completionHandler(.failure(.canNotProcessData))
         }
       }
@@ -66,7 +67,6 @@ public class ChickenCoopAPI {
     let request = NSMutableURLRequest(url: NSURL(string:
                                       "https://chicken-coop.p.rapidapi.com/games?title=\(searchItem)")! as URL,
                                       cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
-    print(searchItem)
     request.httpMethod = "GET"
     request.allHTTPHeaderFields = headers
     let session = URLSession.shared
@@ -80,6 +80,7 @@ public class ChickenCoopAPI {
         let gamelistresponse = try decoder.decode(GameList.self, from: jsonData)
         completionHandler(.success(gamelistresponse))
       } catch {
+        print(jsonData)
         completionHandler(.failure(.canNotProcessData))
       }
     }
