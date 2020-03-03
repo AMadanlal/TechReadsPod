@@ -33,9 +33,10 @@ public class ChickenCoopAPI {
    public func getGameInfo( completionHandler: @escaping( Result<Game, Gameinfoerror>) -> Void) {
 //    create the initial request for the data using API documentation
     let request = NSMutableURLRequest(url: NSURL(
-      string: "https://chicken-coop.p.rapidapi.com/games/\(searchItem.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "")?platform=\(gamePlatform.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "")")! as URL,
-      cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
- 
+      string: "https://chicken-coop.p.rapidapi.com/games" +
+      "/\(searchItem.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "")" +
+        "?platform=\(gamePlatform.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "")" +
+      "")! as URL, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
     request.httpMethod = "GET"
     request.allHTTPHeaderFields = headers
 //    create the session
@@ -65,9 +66,9 @@ public class ChickenCoopAPI {
    public func getGameList(completionHandler: @escaping(Result<GameList, Gameinfoerror>) -> Void) {
 //    remember to format the search item to support spaces in url format
     let request = NSMutableURLRequest(url: NSURL(string:
-                                      "https://chicken-coop.p.rapidapi.com/games?title=\(searchItem.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "")")! as URL,
-                                      cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
-    
+    "https://chicken-coop.p.rapidapi.com/games?title=" +
+      "\(searchItem.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "")" +
+      "")! as URL, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
     request.httpMethod = "GET"
     request.allHTTPHeaderFields = headers
     let session = URLSession.shared
