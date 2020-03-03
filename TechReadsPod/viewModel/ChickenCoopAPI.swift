@@ -32,6 +32,23 @@ public class ChickenCoopAPI {
 //  this gets the individual game information
    public func getGameInfo( completionHandler: @escaping( Result<Game, Gameinfoerror>) -> Void) {
 //    create the initial request for the data using API documentation
+    /* here we will have to create a switch ststement for the different consoles in the format origtext -> apicalltext
+        PC -> pc
+        PlayStation 4 -> playstation-4
+        Xbox One -> xbox-one
+        Stadia -> stadia
+        Switch -> switch
+        3DS -> 3ds
+        X360 -> xbox360
+        WIIU -> wii-u
+        VITA -> playstation-vita
+        PSP -> psp
+        GBA -> game-boy-advance
+        PS2 -> playstation-2
+        PS3 -> playstation-3
+        DS -> ds
+        
+     */
     let request = NSMutableURLRequest(url: NSURL(
       string: "https://chicken-coop.p.rapidapi.com/games" +
       "/\(searchItem.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "")" +
