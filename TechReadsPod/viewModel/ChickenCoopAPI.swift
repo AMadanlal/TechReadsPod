@@ -32,15 +32,10 @@ public class ChickenCoopAPI {
 //  this gets the individual game information
    public func getGameInfo( completionHandler: @escaping( Result<Game, Gameinfoerror>) -> Void) {
 //    create the initial request for the data using API documentation
-//    let request = NSMutableURLRequest(url: NSURL(
-//      string: "https://chicken-coop.p.rapidapi.com/games/\(searchItem)?platform=\(gamePlatform)")! as URL,
-//                                      cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
-    var urlcomponent = URLComponents()
-       urlcomponent.queryItems = [
-       URLQueryItem(name: "platform", value: gamePlatform)]
-     let request = NSMutableURLRequest(url: NSURL(
-         string: "https://chicken-coop.p.rapidapi.com/games/\(searchItem)\(urlcomponent.percentEncodedQuery)")! as URL,
-                                         cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
+    let request = NSMutableURLRequest(url: NSURL(
+      string: "https://chicken-coop.p.rapidapi.com/games/\(searchItem.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "")?platform=\(gamePlatform.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "")")! as URL,
+      cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
+ 
     request.httpMethod = "GET"
     request.allHTTPHeaderFields = headers
 //    create the session
@@ -69,15 +64,9 @@ public class ChickenCoopAPI {
 //  this function gets the list of games
    public func getGameList(completionHandler: @escaping(Result<GameList, Gameinfoerror>) -> Void) {
 //    remember to format the search item to support spaces in url format
-//    let request = NSMutableURLRequest(url: NSURL(string:
-//                                      "https://chicken-coop.p.rapidapi.com/games?title=\(searchItem)")! as URL,
-//                                      cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
-    var urlcomponent = URLComponents()
-    urlcomponent.queryItems = [
-    URLQueryItem(name: "title", value: searchItem)]
     let request = NSMutableURLRequest(url: NSURL(string:
-      "https://chicken-coop.p.rapidapi.com/games?\(urlcomponent.percentEncodedQuery ?? "")")! as URL,
-                                        cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
+                                      "https://chicken-coop.p.rapidapi.com/games?title=\(searchItem.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "")")! as URL,
+                                      cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
     
     request.httpMethod = "GET"
     request.allHTTPHeaderFields = headers
