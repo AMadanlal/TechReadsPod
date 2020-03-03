@@ -52,9 +52,9 @@ public class ChickenCoopAPI {
     switch(gamePlatform) {
       case "PC":
         formattedplatform = "pc"
-      case "PlayStation 4":
+      case "PS4":
         formattedplatform = "playstation-4"
-      case "Xbox One":
+      case "XONE":
         formattedplatform = "xbox-one"
       case "Stadia":
         formattedplatform = "stadia"
@@ -78,6 +78,8 @@ public class ChickenCoopAPI {
         formattedplatform = "playstation-3"
       case "DS":
         formattedplatform = "ds"
+      case "iOS":
+      formattedplatform = "ios"
       default:
       print(gamePlatform)
       
