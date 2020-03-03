@@ -47,12 +47,47 @@ public class ChickenCoopAPI {
         PS2 -> playstation-2
         PS3 -> playstation-3
         DS -> ds
-        
      */
+    var formattedplatform = ""
+    switch(gamePlatform) {
+      case "PC":
+        formattedplatform = "pc"
+      case "PlayStation 4":
+        formattedplatform = "playstation-4"
+      case "Xbox One":
+        formattedplatform = "xbox-one"
+      case "Stadia":
+        formattedplatform = "stadia"
+      case "Switch":
+        formattedplatform = "switch"
+      case "3DS":
+        formattedplatform = "3ds"
+      case "X360":
+        formattedplatform = "xbox360"
+      case "WIIU":
+        formattedplatform = "wii-u"
+      case "VITA":
+        formattedplatform = "playstation-vita"
+      case "PSP":
+        formattedplatform = "psp"
+      case "GBA":
+        formattedplatform = "game-boy-advance"
+      case "PS2":
+        formattedplatform = "playstation-2"
+      case "PS3":
+        formattedplatform = "playstation-3"
+      case "DS":
+        formattedplatform = "ds"
+      default:
+      print(gamePlatform)
+      
+    }
+   
+    
     let request = NSMutableURLRequest(url: NSURL(
       string: "https://chicken-coop.p.rapidapi.com/games" +
       "/\(searchItem.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "")" +
-        "?platform=\(gamePlatform.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "")" +
+        "?platform=\(formattedplatform.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "")" +
       "")! as URL, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
     request.httpMethod = "GET"
     request.allHTTPHeaderFields = headers
