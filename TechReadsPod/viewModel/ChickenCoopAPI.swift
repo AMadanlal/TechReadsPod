@@ -29,63 +29,66 @@ public class ChickenCoopAPI {
     gamePlatform = platform
   }
 
+// swiftlint:disable cyclomatic_complexity
+  func formatplatformstring(stringtoformat: String) -> String {
+    /* here we will have to create a switch ststement for the different consoles in the format origtext -> apicalltext
+          PC -> pc
+          PlayStation 4 -> playstation-4
+          Xbox One -> xbox-one
+          Stadia -> stadia
+          Switch -> switch
+          3DS -> 3ds
+          X360 -> xbox360
+          WIIU -> wii-u
+          VITA -> playstation-vita
+          PSP -> psp
+          GBA -> game-boy-advance
+          PS2 -> playstation-2
+          PS3 -> playstation-3
+          DS -> ds
+       */
+       switch stringtoformat {
+       case "PC":
+       return "pc"
+       case "PS4":
+         return "playstation-4"
+       case "XONE":
+         return "xbox-one"
+       case "Stadia":
+         return "stadia"
+       case "Switch":
+         return "switch"
+       case "3DS":
+         return "3ds"
+       case "X360":
+         return "xbox360"
+       case "WIIU":
+         return "wii-u"
+       case "VITA":
+         return "playstation-vita"
+       case "PSP":
+         return "psp"
+       case "GBA":
+         return "game-boy-advance"
+       case "PS2":
+         return "playstation-2"
+       case "PS3":
+         return "playstation-3"
+       case "DS":
+         return "ds"
+       case "iOS":
+       return "ios"
+       default:
+         print(gamePlatform)
+        return gamePlatform
+     }
+//    swiftlint was disabled in this function as it displayed a warning saying the switch statement is too complex
+    // swiftlint:enable cyclomatic_complexity
+  }
 //  this gets the individual game information
    public func getGameInfo( completionHandler: @escaping( Result<Game, Gameinfoerror>) -> Void) {
 //    create the initial request for the data using API documentation
-    /* here we will have to create a switch ststement for the different consoles in the format origtext -> apicalltext
-        PC -> pc
-        PlayStation 4 -> playstation-4
-        Xbox One -> xbox-one
-        Stadia -> stadia
-        Switch -> switch
-        3DS -> 3ds
-        X360 -> xbox360
-        WIIU -> wii-u
-        VITA -> playstation-vita
-        PSP -> psp
-        GBA -> game-boy-advance
-        PS2 -> playstation-2
-        PS3 -> playstation-3
-        DS -> ds
-     */
-    var formattedplatform = ""
-    switch(gamePlatform) {
-      case "PC":
-        formattedplatform = "pc"
-      case "PS4":
-        formattedplatform = "playstation-4"
-      case "XONE":
-        formattedplatform = "xbox-one"
-      case "Stadia":
-        formattedplatform = "stadia"
-      case "Switch":
-        formattedplatform = "switch"
-      case "3DS":
-        formattedplatform = "3ds"
-      case "X360":
-        formattedplatform = "xbox360"
-      case "WIIU":
-        formattedplatform = "wii-u"
-      case "VITA":
-        formattedplatform = "playstation-vita"
-      case "PSP":
-        formattedplatform = "psp"
-      case "GBA":
-        formattedplatform = "game-boy-advance"
-      case "PS2":
-        formattedplatform = "playstation-2"
-      case "PS3":
-        formattedplatform = "playstation-3"
-      case "DS":
-        formattedplatform = "ds"
-      case "iOS":
-      formattedplatform = "ios"
-      default:
-      print(gamePlatform)
-      
-    }
-   
-    
+    let formattedplatform = formatplatformstring(stringtoformat: gamePlatform)
     let request = NSMutableURLRequest(url: NSURL(
       string: "https://chicken-coop.p.rapidapi.com/games" +
       "/\(searchItem.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "")" +
