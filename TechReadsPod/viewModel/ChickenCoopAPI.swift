@@ -24,16 +24,76 @@ public class ChickenCoopAPI {
   let headers = ["x-rapidapi-host": "chicken-coop.p.rapidapi.com",
                   "x-rapidapi-key": "20e0c6a126msh31a394fe35837d8p1d97f3jsn9bf6099a1b56"]
 
-  public init(searched: String) {
+  public init(searched: String, platform: String) {
     searchItem = searched
+    gamePlatform = platform
   }
 
+// swiftlint:disable cyclomatic_complexity
+  func formatplatformstring(stringtoformat: String) -> String {
+    /* here we will have to create a switch ststement for the different consoles in the format origtext -> apicalltext
+          PC -> pc
+          PlayStation 4 -> playstation-4
+          Xbox One -> xbox-one
+          Stadia -> stadia
+          Switch -> switch
+          3DS -> 3ds
+          X360 -> xbox360
+          WIIU -> wii-u
+          VITA -> playstation-vita
+          PSP -> psp
+          GBA -> game-boy-advance
+          PS2 -> playstation-2
+          PS3 -> playstation-3
+          DS -> ds
+       */
+       switch stringtoformat {
+       case "PC":
+       return "pc"
+       case "PS4":
+         return "playstation-4"
+       case "XONE":
+         return "xbox-one"
+       case "Stadia":
+         return "stadia"
+       case "Switch":
+         return "switch"
+       case "3DS":
+         return "3ds"
+       case "X360":
+         return "xbox360"
+       case "WIIU":
+         return "wii-u"
+       case "VITA":
+         return "playstation-vita"
+       case "PSP":
+         return "psp"
+       case "GBA":
+         return "game-boy-advance"
+       case "PS2":
+         return "playstation-2"
+       case "PS3":
+         return "playstation-3"
+       case "DS":
+         return "ds"
+       case "iOS":
+       return "ios"
+       default:
+         print(gamePlatform)
+        return gamePlatform
+     }
+//    swiftlint was disabled in this function as it displayed a warning saying the switch statement is too complex
+    // swiftlint:enable cyclomatic_complexity
+  }
 //  this gets the individual game information
    public func getGameInfo( completionHandler: @escaping( Result<Game, Gameinfoerror>) -> Void) {
 //    create the initial request for the data using API documentation
+    let formattedplatform = formatplatformstring(stringtoformat: gamePlatform)
     let request = NSMutableURLRequest(url: NSURL(
-      string: "https://chicken-coop.p.rapidapi.com/games/\(searchItem)?platform=\(gamePlatform)")! as URL,
-                                      cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
+      string: "https://chicken-coop.p.rapidapi.com/games" +
+      "/\(searchItem.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "")" +
+        "?platform=\(formattedplatform.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "")" +
+      "")! as URL, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
     request.httpMethod = "GET"
     request.allHTTPHeaderFields = headers
 //    create the session
@@ -52,6 +112,7 @@ public class ChickenCoopAPI {
         completionHandler(.success(gameresponsedetails))
         //the previous line allows values obtained when doing async instructions to be returned
         } catch {
+          print(jsonData)
           completionHandler(.failure(.canNotProcessData))
         }
       }
@@ -62,9 +123,9 @@ public class ChickenCoopAPI {
    public func getGameList(completionHandler: @escaping(Result<GameList, Gameinfoerror>) -> Void) {
 //    remember to format the search item to support spaces in url format
     let request = NSMutableURLRequest(url: NSURL(string:
-                                      "https://chicken-coop.p.rapidapi.com/games?title=\(searchItem)")! as URL,
-                                      cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
-    print(searchItem)
+    "https://chicken-coop.p.rapidapi.com/games?title=" +
+      "\(searchItem.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "")" +
+      "")! as URL, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
     request.httpMethod = "GET"
     request.allHTTPHeaderFields = headers
     let session = URLSession.shared
@@ -78,6 +139,7 @@ public class ChickenCoopAPI {
         let gamelistresponse = try decoder.decode(GameList.self, from: jsonData)
         completionHandler(.success(gamelistresponse))
       } catch {
+        print(jsonData)
         completionHandler(.failure(.canNotProcessData))
       }
     }

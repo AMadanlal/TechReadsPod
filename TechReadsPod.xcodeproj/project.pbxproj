@@ -48,6 +48,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D3886D0C240902DE000FC804 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				D3DC3D742405060000D28DEA /* StructPod.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		D3886D0D24090314000FC804 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D39BC9A724053CE9001C5EDE /* ChickenCoopAPI.swift */,
+				D3037F2224062EC000123532 /* PreferencesManagement.swift */,
+				D3A0ED612407969200798AE0 /* GameInfoProcess.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
 		D3DC3D5F240501C800D28DEA = {
 			isa = PBXGroup;
 			children = (
@@ -69,12 +87,10 @@
 		D3DC3D6B240501C800D28DEA /* TechReadsPod */ = {
 			isa = PBXGroup;
 			children = (
+				D3886D0D24090314000FC804 /* viewModel */,
+				D3886D0C240902DE000FC804 /* model */,
 				D3DC3D6C240501C800D28DEA /* TechReadsPod.h */,
 				D3DC3D6D240501C800D28DEA /* Info.plist */,
-				D3DC3D742405060000D28DEA /* StructPod.swift */,
-				D39BC9A724053CE9001C5EDE /* ChickenCoopAPI.swift */,
-				D3037F2224062EC000123532 /* PreferencesManagement.swift */,
-				D3A0ED612407969200798AE0 /* GameInfoProcess.swift */,
 			);
 			path = TechReadsPod;
 			sourceTree = "<group>";
@@ -111,6 +127,7 @@
 				D3DC3D65240501C800D28DEA /* Sources */,
 				D3DC3D66240501C800D28DEA /* Frameworks */,
 				D3DC3D67240501C800D28DEA /* Resources */,
+				D382739B240E25E200280629 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -186,6 +203,23 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		D382739B240E25E200280629 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
