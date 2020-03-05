@@ -10,16 +10,31 @@
 		35EEDF5168939519F3466943 /* Pods_TechReadsPod.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DB2B6D9F56AEA0E346BF75 /* Pods_TechReadsPod.framework */; };
 		D3037F2324062EC000123532 /* PreferencesManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3037F2224062EC000123532 /* PreferencesManagement.swift */; };
 		D39BC9A824053CE9001C5EDE /* ChickenCoopAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39BC9A724053CE9001C5EDE /* ChickenCoopAPI.swift */; };
+		D39E12F92410C43E006F3FE0 /* TechReadsPodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39E12F82410C43E006F3FE0 /* TechReadsPodTests.swift */; };
+		D39E12FB2410C43E006F3FE0 /* TechReadsPod.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3DC3D69240501C800D28DEA /* TechReadsPod.framework */; };
 		D3A0ED622407969200798AE0 /* GameInfoProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A0ED612407969200798AE0 /* GameInfoProcess.swift */; };
 		D3DC3D6E240501C800D28DEA /* TechReadsPod.h in Headers */ = {isa = PBXBuildFile; fileRef = D3DC3D6C240501C800D28DEA /* TechReadsPod.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D3DC3D752405060000D28DEA /* StructPod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DC3D742405060000D28DEA /* StructPod.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D39E12FC2410C43E006F3FE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3DC3D60240501C800D28DEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3DC3D68240501C800D28DEA;
+			remoteInfo = TechReadsPod;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1F4D8D47E04DB46A3E5121DC /* Pods-TechReadsPod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TechReadsPod.release.xcconfig"; path = "Target Support Files/Pods-TechReadsPod/Pods-TechReadsPod.release.xcconfig"; sourceTree = "<group>"; };
 		2FBD5118F33F151E961F3B6F /* Pods-TechReadsPod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TechReadsPod.debug.xcconfig"; path = "Target Support Files/Pods-TechReadsPod/Pods-TechReadsPod.debug.xcconfig"; sourceTree = "<group>"; };
 		D3037F2224062EC000123532 /* PreferencesManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesManagement.swift; sourceTree = "<group>"; };
 		D39BC9A724053CE9001C5EDE /* ChickenCoopAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChickenCoopAPI.swift; sourceTree = "<group>"; };
+		D39E12F62410C43E006F3FE0 /* TechReadsPodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TechReadsPodTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D39E12F82410C43E006F3FE0 /* TechReadsPodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechReadsPodTests.swift; sourceTree = "<group>"; };
+		D39E12FA2410C43E006F3FE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3A0ED612407969200798AE0 /* GameInfoProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfoProcess.swift; sourceTree = "<group>"; };
 		D3DC3D69240501C800D28DEA /* TechReadsPod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TechReadsPod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3DC3D6C240501C800D28DEA /* TechReadsPod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TechReadsPod.h; sourceTree = "<group>"; };
@@ -29,6 +44,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D39E12F32410C43E006F3FE0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D39E12FB2410C43E006F3FE0 /* TechReadsPod.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D3DC3D66240501C800D28DEA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -66,10 +89,20 @@
 			path = viewModel;
 			sourceTree = "<group>";
 		};
+		D39E12F72410C43E006F3FE0 /* TechReadsPodTests */ = {
+			isa = PBXGroup;
+			children = (
+				D39E12F82410C43E006F3FE0 /* TechReadsPodTests.swift */,
+				D39E12FA2410C43E006F3FE0 /* Info.plist */,
+			);
+			path = TechReadsPodTests;
+			sourceTree = "<group>";
+		};
 		D3DC3D5F240501C800D28DEA = {
 			isa = PBXGroup;
 			children = (
 				D3DC3D6B240501C800D28DEA /* TechReadsPod */,
+				D39E12F72410C43E006F3FE0 /* TechReadsPodTests */,
 				D3DC3D6A240501C800D28DEA /* Products */,
 				EA635A57DD9201BF2B94CFD4 /* Pods */,
 				5C81E7BF96DCF520A8A0424A /* Frameworks */,
@@ -80,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				D3DC3D69240501C800D28DEA /* TechReadsPod.framework */,
+				D39E12F62410C43E006F3FE0 /* TechReadsPodTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -118,6 +152,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		D39E12F52410C43E006F3FE0 /* TechReadsPodTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D39E13002410C43E006F3FE0 /* Build configuration list for PBXNativeTarget "TechReadsPodTests" */;
+			buildPhases = (
+				D39E12F22410C43E006F3FE0 /* Sources */,
+				D39E12F32410C43E006F3FE0 /* Frameworks */,
+				D39E12F42410C43E006F3FE0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D39E12FD2410C43E006F3FE0 /* PBXTargetDependency */,
+			);
+			name = TechReadsPodTests;
+			productName = TechReadsPodTests;
+			productReference = D39E12F62410C43E006F3FE0 /* TechReadsPodTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		D3DC3D68240501C800D28DEA /* TechReadsPod */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3DC3D71240501C800D28DEA /* Build configuration list for PBXNativeTarget "TechReadsPod" */;
@@ -144,9 +196,13 @@
 		D3DC3D60240501C800D28DEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = DVT;
 				TargetAttributes = {
+					D39E12F52410C43E006F3FE0 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
 					D3DC3D68240501C800D28DEA = {
 						CreatedOnToolsVersion = 11.3.1;
 						LastSwiftMigration = 1130;
@@ -167,11 +223,19 @@
 			projectRoot = "";
 			targets = (
 				D3DC3D68240501C800D28DEA /* TechReadsPod */,
+				D39E12F52410C43E006F3FE0 /* TechReadsPodTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D39E12F42410C43E006F3FE0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D3DC3D67240501C800D28DEA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -224,6 +288,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D39E12F22410C43E006F3FE0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D39E12F92410C43E006F3FE0 /* TechReadsPodTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D3DC3D65240501C800D28DEA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -237,7 +309,49 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		D39E12FD2410C43E006F3FE0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3DC3D68240501C800D28DEA /* TechReadsPod */;
+			targetProxy = D39E12FC2410C43E006F3FE0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		D39E12FE2410C43E006F3FE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TechReadsPodTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = za.co.dvt.TechReadsPodTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D39E12FF2410C43E006F3FE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TechReadsPodTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = za.co.dvt.TechReadsPodTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		D3DC3D6F240501C800D28DEA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -412,6 +526,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D39E13002410C43E006F3FE0 /* Build configuration list for PBXNativeTarget "TechReadsPodTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D39E12FE2410C43E006F3FE0 /* Debug */,
+				D39E12FF2410C43E006F3FE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D3DC3D63240501C800D28DEA /* Build configuration list for PBXProject "TechReadsPod" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
