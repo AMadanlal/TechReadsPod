@@ -10,14 +10,14 @@ import TechReadsPod
 
 public class ChickenCoopMockAPI: APICallsProtocol {
   var gamemodel: Game!
-  var gamelist:GameList!
+  var gamelist: GameList!
   public func getGameList(completionHandler: @escaping (Result<GameList, Gameinfoerror>) -> Void) {
     gamelist = GameList()
     gamelist.query = ""
     gamelist.executionTime = 0
     gamelist.countResult = 0
     gamelist.result = [GameListItem]()
-//    return here
+    completionHandler(.success(gamelist))
   }
   public func getGameInfo(completionHandler: @escaping (Result<Game, Gameinfoerror>) -> Void) {
     gamemodel = Game()
@@ -31,6 +31,6 @@ public class ChickenCoopMockAPI: APICallsProtocol {
     gamemodel.publisher = [String]()
     gamemodel.rating = "E"
     gamemodel.alsoAvailableOn = [String]()
-    //    return here
+    completionHandler(.success(gamemodel))
   }
 }

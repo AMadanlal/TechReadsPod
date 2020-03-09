@@ -14,7 +14,7 @@
 		D39E12FB2410C43E006F3FE0 /* TechReadsPod.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3DC3D69240501C800D28DEA /* TechReadsPod.framework */; };
 		D3A0ED622407969200798AE0 /* GameInfoProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A0ED612407969200798AE0 /* GameInfoProcess.swift */; };
 		D3C23A4D241601A40094B498 /* APICalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C23A4C241601A40094B498 /* APICalls.swift */; };
-		D3C23A4F241603C80094B498 /* ChickenCoopAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C23A4E241603C80094B498 /* ChickenCoopAPITest.swift */; };
+		D3C23A4F241603C80094B498 /* InformationDisplayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C23A4E241603C80094B498 /* InformationDisplayTests.swift */; };
 		D3C23A51241606150094B498 /* ChickenCoopMockAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C23A50241606150094B498 /* ChickenCoopMockAPI.swift */; };
 		D3DC3D6E240501C800D28DEA /* TechReadsPod.h in Headers */ = {isa = PBXBuildFile; fileRef = D3DC3D6C240501C800D28DEA /* TechReadsPod.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D3DC3D752405060000D28DEA /* StructPod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DC3D742405060000D28DEA /* StructPod.swift */; };
@@ -40,7 +40,7 @@
 		D39E12FA2410C43E006F3FE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3A0ED612407969200798AE0 /* GameInfoProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfoProcess.swift; sourceTree = "<group>"; };
 		D3C23A4C241601A40094B498 /* APICalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICalls.swift; sourceTree = "<group>"; };
-		D3C23A4E241603C80094B498 /* ChickenCoopAPITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChickenCoopAPITest.swift; sourceTree = "<group>"; };
+		D3C23A4E241603C80094B498 /* InformationDisplayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationDisplayTests.swift; sourceTree = "<group>"; };
 		D3C23A50241606150094B498 /* ChickenCoopMockAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChickenCoopMockAPI.swift; sourceTree = "<group>"; };
 		D3DC3D69240501C800D28DEA /* TechReadsPod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TechReadsPod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3DC3D6C240501C800D28DEA /* TechReadsPod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TechReadsPod.h; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 			children = (
 				D39E12F82410C43E006F3FE0 /* TextFormattingTests.swift */,
 				D39E12FA2410C43E006F3FE0 /* Info.plist */,
-				D3C23A4E241603C80094B498 /* ChickenCoopAPITest.swift */,
+				D3C23A4E241603C80094B498 /* InformationDisplayTests.swift */,
 				D3C23A50241606150094B498 /* ChickenCoopMockAPI.swift */,
 			);
 			path = TechReadsPodTests;
@@ -303,7 +303,7 @@
 			files = (
 				D39E12F92410C43E006F3FE0 /* TextFormattingTests.swift in Sources */,
 				D3C23A51241606150094B498 /* ChickenCoopMockAPI.swift in Sources */,
-				D3C23A4F241603C80094B498 /* ChickenCoopAPITest.swift in Sources */,
+				D3C23A4F241603C80094B498 /* InformationDisplayTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

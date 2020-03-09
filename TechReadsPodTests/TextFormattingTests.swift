@@ -10,9 +10,6 @@ import XCTest
 @testable import TechReadsPod
 
 class TextFormattingTests: XCTestCase {
-  weak var titlelabel: UILabel!
-  weak var textview: UITextView!
-  weak var imageplace: UIImageView!
   var APIClass: ChickenCoopAPI!
 
     override func setUp() {
@@ -150,9 +147,6 @@ class TextFormattingTests: XCTestCase {
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
-      titlelabel = nil
-      textview = nil
-      imageplace = nil
       APIClass = nil
     }
 
