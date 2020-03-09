@@ -8,12 +8,7 @@
 
 import Foundation
 
-public class ChickenCoopAPI {
-// enum for errors
-  public enum Gameinfoerror: Error {
-    case noDataAvailable
-    case canNotProcessData
-  }
+public class ChickenCoopAPI: APICallsProtocol {
 
 //  class variables
   public var searchItem: String = ""

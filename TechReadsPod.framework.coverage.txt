@@ -1,0 +1,343 @@
+/Users/amadanlal/Desktop/TechReadsPod/TechReadsPod/model/StructPod.swift:
+    1|       |//
+    2|       |//  StructPod.swift
+    3|       |//  TechReadsPod
+    4|       |//
+    5|       |//  Created by Akshar Madanlal on 2020/02/25.
+    6|       |//  Copyright © 2020 DVT. All rights reserved.
+    7|       |//
+    8|       |
+    9|       |import Foundation
+   10|       |
+   11|       |//  struct for the gamelist items
+   12|       |  public struct GameListItem: Decodable {
+   13|       |    public var title: String
+   14|       |    public var platform: String
+   15|      0|    public init() {
+   16|      0|      title = ""
+   17|      0|      platform = ""
+   18|      0|    }
+   19|       |  }
+   20|       |
+   21|       |//  struct for the gamelist
+   22|       |  public struct GameList: Decodable {
+   23|       |    public var query: String
+   24|       |    public var executionTime: Double
+   25|       |    public var result = [GameListItem]()
+   26|       |    public var countResult: Int
+   27|     18|    public init() {
+   28|     18|      query = ""
+   29|     18|      executionTime = 0
+   30|     18|      countResult = 0
+   31|     18|    }
+   32|       |  }
+   33|       |
+   34|       |  public struct Gameresponse: Decodable {
+   35|       |    public var query: String
+   36|       |    public var executionTime: Double
+   37|       |    public var result = Game()
+   38|      0|    public init() {
+   39|      0|      query = ""
+   40|      0|      executionTime = 0
+   41|      0|    }
+   42|       |  }
+   43|       |
+   44|       |//  this is a struct to store the individual game data
+   45|       |  public struct Game: Decodable {
+   46|       |    public var title: String
+   47|       |    public var releaseDate: String
+   48|       |    public var description: String
+   49|       |    public var genre = [String]()
+   50|       |    public var image: String
+   51|       |    public var score: Int
+   52|       |    public var developer: String
+   53|       |    public var publisher = [String]()
+   54|       |    public var rating: String
+   55|       |    public var alsoAvailableOn = [String]()
+   56|     36|    public init() {
+   57|     36|      title = ""
+   58|     36|      releaseDate = ""
+   59|     36|      description = ""
+   60|     36|      image = ""
+   61|     36|      score = 0
+   62|     36|      developer = ""
+   63|     36|      rating = ""
+   64|     36|    }
+   65|       |}
+
+/Users/amadanlal/Desktop/TechReadsPod/TechReadsPod/viewModel/ChickenCoopAPI.swift:
+    1|       |//
+    2|       |//  ChickenCoopAPI.swift
+    3|       |//  Tech Reads
+    4|       |//
+    5|       |//  Created by Akshar Madanlal on 2020/02/18.
+    6|       |//  Copyright © 2020 Akshar Madanlal. All rights reserved.
+    7|       |//
+    8|       |
+    9|       |import Foundation
+   10|       |
+   11|       |public class ChickenCoopAPI {
+   12|       |// enum for errors
+   13|       |  public enum Gameinfoerror: Error {
+   14|       |    case noDataAvailable
+   15|       |    case canNotProcessData
+   16|       |  }
+   17|       |
+   18|       |//  class variables
+   19|       |  public var searchItem: String = ""
+   20|       |  public var gamePlatform: String = "pc" //this is made public in order for the other class to modify it
+   21|       |  public var gamedetails = Game()
+   22|       |  public var gamelist = GameList()
+   23|       |//  this is the headers that include the host and the unique key given to a user to access the api
+   24|       |  let headers = ["x-rapidapi-host": "chicken-coop.p.rapidapi.com",
+   25|       |                  "x-rapidapi-key": "20e0c6a126msh31a394fe35837d8p1d97f3jsn9bf6099a1b56"]
+   26|       |
+   27|     18|  public init(searched: String, platform: String) {
+   28|     18|    searchItem = searched
+   29|     18|    gamePlatform = platform
+   30|     18|  }
+   31|       |
+   32|       |// swiftlint:disable cyclomatic_complexity
+   33|     16|  func formatplatformstring(stringtoformat: String) -> String {
+   34|     16|    /* here we will have to create a switch ststement for the different consoles in the format origtext -> apicalltext
+   35|     16|          PC -> pc
+   36|     16|          PlayStation 4 -> playstation-4
+   37|     16|          Xbox One -> xbox-one
+   38|     16|          Stadia -> stadia
+   39|     16|          Switch -> switch
+   40|     16|          3DS -> 3ds
+   41|     16|          X360 -> xbox360
+   42|     16|          WIIU -> wii-u
+   43|     16|          VITA -> playstation-vita
+   44|     16|          PSP -> psp
+   45|     16|          GBA -> game-boy-advance
+   46|     16|          PS2 -> playstation-2
+   47|     16|          PS3 -> playstation-3
+   48|     16|          DS -> ds
+   49|     16|       */
+   50|     16|       switch stringtoformat {
+   51|     16|       case "PC":
+   52|      1|       return "pc"
+   53|     16|       case "PS4":
+   54|      1|         return "playstation-4"
+   55|     16|       case "XONE":
+   56|      1|         return "xbox-one"
+   57|     16|       case "Stadia":
+   58|      1|         return "stadia"
+   59|     16|       case "Switch":
+   60|      1|         return "switch"
+   61|     16|       case "3DS":
+   62|      1|         return "3ds"
+   63|     16|       case "X360":
+   64|      1|         return "xbox360"
+   65|     16|       case "WIIU":
+   66|      1|         return "wii-u"
+   67|     16|       case "VITA":
+   68|      1|         return "playstation-vita"
+   69|     16|       case "PSP":
+   70|      1|         return "psp"
+   71|     16|       case "GBA":
+   72|      1|         return "game-boy-advance"
+   73|     16|       case "PS2":
+   74|      1|         return "playstation-2"
+   75|     16|       case "PS3":
+   76|      1|         return "playstation-3"
+   77|     16|       case "DS":
+   78|      1|         return "ds"
+   79|     16|       case "iOS":
+   80|      1|       return "ios"
+   81|     16|       default:
+   82|      1|         print(gamePlatform)
+   83|      1|        return gamePlatform
+   84|     16|     }
+   85|     16|//    swiftlint was disabled in this function as it displayed a warning saying the switch statement is too complex
+   86|     16|    // swiftlint:enable cyclomatic_complexity
+   87|     16|  }
+   88|       |//  this gets the individual game information
+   89|      0|   public func getGameInfo( completionHandler: @escaping( Result<Game, Gameinfoerror>) -> Void) {
+   90|      0|//    create the initial request for the data using API documentation
+   91|      0|    let formattedplatform = formatplatformstring(stringtoformat: gamePlatform)
+   92|      0|    let request = NSMutableURLRequest(url: NSURL(
+   93|      0|      string: "https://chicken-coop.p.rapidapi.com/games" +
+   94|      0|      "/\(searchItem.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "")" +
+   95|      0|        "?platform=\(formattedplatform.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "")" +
+   96|      0|      "")! as URL, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
+   97|      0|    request.httpMethod = "GET"
+   98|      0|    request.allHTTPHeaderFields = headers
+   99|      0|//    create the session
+  100|      0|    let session = URLSession.shared
+  101|      0|//    make the call an get the data
+  102|      0|    let dataTask = session.dataTask(with: request as URLRequest) { data, _, _ in
+  103|      0|      guard let jsonData = data else {
+  104|      0|        completionHandler(.failure(.noDataAvailable))
+  105|      0|        return
+  106|      0|      }
+  107|      0|      do {
+  108|      0|        let decoder = JSONDecoder()
+  109|      0|        let gameresponse = try decoder.decode(Gameresponse.self, from: jsonData)
+  110|      0|//        gameresponsedetails contain all the information of the game
+  111|      0|        let gameresponsedetails = gameresponse.result
+  112|      0|        completionHandler(.success(gameresponsedetails))
+  113|      0|        //the previous line allows values obtained when doing async instructions to be returned
+  114|      0|        } catch {
+  115|      0|          print(jsonData)
+  116|      0|          completionHandler(.failure(.canNotProcessData))
+  117|      0|        }
+  118|      0|      }
+  119|      0|    dataTask.resume()
+  120|      0|  }
+  121|       |
+  122|       |//  this function gets the list of games
+  123|      0|   public func getGameList(completionHandler: @escaping(Result<GameList, Gameinfoerror>) -> Void) {
+  124|      0|//    remember to format the search item to support spaces in url format
+  125|      0|    let request = NSMutableURLRequest(url: NSURL(string:
+  126|      0|    "https://chicken-coop.p.rapidapi.com/games?title=" +
+  127|      0|      "\(searchItem.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "")" +
+  128|      0|      "")! as URL, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
+  129|      0|    request.httpMethod = "GET"
+  130|      0|    request.allHTTPHeaderFields = headers
+  131|      0|    let session = URLSession.shared
+  132|      0|    let dataTask = session.dataTask(with: request as URLRequest) { data, _, _ in
+  133|      0|      guard let jsonData = data else {
+  134|      0|        completionHandler(.failure(.noDataAvailable))
+  135|      0|        return
+  136|      0|      }
+  137|      0|      do {
+  138|      0|        let decoder = JSONDecoder()
+  139|      0|        let gamelistresponse = try decoder.decode(GameList.self, from: jsonData)
+  140|      0|        completionHandler(.success(gamelistresponse))
+  141|      0|      } catch {
+  142|      0|        print(jsonData)
+  143|      0|        completionHandler(.failure(.canNotProcessData))
+  144|      0|      }
+  145|      0|    }
+  146|      0|    dataTask.resume()
+  147|      0|  }
+  148|       |}
+
+/Users/amadanlal/Desktop/TechReadsPod/TechReadsPod/viewModel/GameInfoProcess.swift:
+    1|       |//
+    2|       |//  GameInfoProcess.swift
+    3|       |//  TechReadsPod
+    4|       |//
+    5|       |//  Created by Akshar Madanlal on 2020/02/27.
+    6|       |//  Copyright © 2020 DVT. All rights reserved.
+    7|       |//
+    8|       |import UIKit
+    9|       |import Foundation
+   10|       |
+   11|      0|public func todisplay(gamemodel: Game, titlelabel: UILabel, textview: UITextView, imageplace: UIImageView) {
+   12|      0|     titlelabel.text = gamemodel.title
+   13|      0| //this part formats the different string arrays better
+   14|      0|     var simplifiedgenrestring = ""
+   15|      0|     for gen in gamemodel.genre {
+   16|      0|       if gen == gamemodel.genre[gamemodel.genre.count-1] {
+   17|      0|           simplifiedgenrestring += gen
+   18|      0|         } else {
+   19|      0|           simplifiedgenrestring += gen + ", "
+   20|      0|         }
+   21|      0|       }
+   22|      0|     var simplifiedpublisherstring = ""
+   23|      0|     for pub in gamemodel.publisher {
+   24|      0|     if pub == gamemodel.publisher[gamemodel.publisher.count-1] {
+   25|      0|         simplifiedpublisherstring += pub
+   26|      0|       } else {
+   27|      0|         simplifiedpublisherstring += pub + ", "
+   28|      0|       }
+   29|      0|     }
+   30|      0|     var simplifiedconsolestring = ""
+   31|      0|     for console in gamemodel.alsoAvailableOn {
+   32|      0|     if console == gamemodel.alsoAvailableOn[gamemodel.alsoAvailableOn.count-1] {
+   33|      0|         simplifiedconsolestring += console
+   34|      0|       } else {
+   35|      0|         simplifiedconsolestring += console + ", "
+   36|      0|       }
+   37|      0|     }
+   38|      0| //the next string contains the content to be shown to the user in a specific format
+   39|      0|     let fulltext = """
+   40|      0|     Release Date: \(gamemodel.releaseDate)
+   41|      0|     Genres: \(simplifiedgenrestring)
+   42|      0|     Developer: \(gamemodel.developer)
+   43|      0|     Publisher: \(simplifiedpublisherstring)
+   44|      0|     Also Available on: \(simplifiedconsolestring)
+   45|      0|     Rating: \(gamemodel.rating)
+   46|      0|     Description: \(gamemodel.description)
+   47|      0|     Score: \(gamemodel.score)
+   48|      0|     """
+   49|      0| //    this is to load the image onto the page
+   50|      0|     guard let imageURL = URL(string: gamemodel.image) else { return }
+   51|      0|     DispatchQueue.global().async {
+   52|      0|         guard let imageData = try? Data(contentsOf: imageURL) else { return }
+   53|      0|         let image = UIImage(data: imageData)
+   54|      0|         DispatchQueue.main.async {
+   55|      0|             imageplace.image = image
+   56|      0|         }
+   57|      0|     }
+   58|      0|     textview.text = fulltext
+   59|      0|   }
+
+/Users/amadanlal/Desktop/TechReadsPod/TechReadsPod/viewModel/PreferencesManagement.swift:
+    1|       |//
+    2|       |//  PreferencesManagement.swift
+    3|       |//  TechReadsPod
+    4|       |//
+    5|       |//  Created by Akshar Madanlal on 2020/02/26.
+    6|       |//  Copyright © 2020 DVT. All rights reserved.
+    7|       |//
+    8|       |
+    9|       |import Foundation
+   10|       |
+   11|       |  public let file = "UserMedium.txt" //this is the name of the file for the user medium
+   12|       |  public let genrefile = "UserGenres.txt" //this is the name of the file with the user genres
+   13|       |     //      this is to load the data from the file
+   14|      0|  public func loadmedium() -> String {
+   15|      0|        var consolepref = ""
+   16|      0|    if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+   17|      0|        let fileurl = dir.appendingPathComponent(file)
+   18|      0|        do {
+   19|      0|          let datafromfile = try String(contentsOf: fileurl, encoding: .utf8)
+   20|      0|          consolepref = datafromfile
+   21|      0|        } catch {
+   22|      0|          print(error)
+   23|      0|        }
+   24|      0|      }
+   25|      0|    return consolepref
+   26|      0|  }
+   27|       |//  the following function is to save the console preference to a file
+   28|      0|  public func savemedium(medium: String) {
+   29|      0|    if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+   30|      0|      let fileurl = dir.appendingPathComponent(file)
+   31|      0|      do {
+   32|      0|        try medium.write(to: fileurl, atomically: false, encoding: .utf8)
+   33|      0|      } catch {
+   34|      0|        print(error)
+   35|      0|      }
+   36|      0|    }
+   37|      0|  }
+   38|       |//  this function loads genres onto the page
+   39|      0|  public func loadGenre() -> String {
+   40|      0|    var genrestring = " "
+   41|      0|    if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+   42|      0|         let fileurl = dir.appendingPathComponent(genrefile)
+   43|      0|         do {
+   44|      0|           let datafromfile = try String(contentsOf: fileurl, encoding: .utf8)
+   45|      0|           genrestring = datafromfile
+   46|      0|         } catch {
+   47|      0|           print(error)
+   48|      0|           genrestring = "List of Genre's: "
+   49|      0|         }
+   50|      0|       }
+   51|      0|    return genrestring
+   52|      0|  }
+   53|       |//  this function saves the genre to the file
+   54|      0|  public func saveGenre(genretosave: String) {
+   55|      0|    if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+   56|      0|         let fileurl = dir.appendingPathComponent(genrefile)
+   57|      0|         do {
+   58|      0|           try genretosave.write(to: fileurl, atomically: false, encoding: .utf8)
+   59|      0|         } catch {
+   60|      0|           print(error)
+   61|      0|         }
+   62|      0|       }
+   63|      0|  }
+
