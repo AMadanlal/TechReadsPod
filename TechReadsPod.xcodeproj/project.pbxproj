@@ -16,6 +16,7 @@
 		D3C23A4D241601A40094B498 /* APICalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C23A4C241601A40094B498 /* APICalls.swift */; };
 		D3C23A4F241603C80094B498 /* InformationDisplayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C23A4E241603C80094B498 /* InformationDisplayTests.swift */; };
 		D3C23A51241606150094B498 /* ChickenCoopMockAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C23A50241606150094B498 /* ChickenCoopMockAPI.swift */; };
+		D3C23A532416318B0094B498 /* FileSavingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C23A522416318B0094B498 /* FileSavingTests.swift */; };
 		D3DC3D6E240501C800D28DEA /* TechReadsPod.h in Headers */ = {isa = PBXBuildFile; fileRef = D3DC3D6C240501C800D28DEA /* TechReadsPod.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D3DC3D752405060000D28DEA /* StructPod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DC3D742405060000D28DEA /* StructPod.swift */; };
 /* End PBXBuildFile section */
@@ -42,6 +43,7 @@
 		D3C23A4C241601A40094B498 /* APICalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICalls.swift; sourceTree = "<group>"; };
 		D3C23A4E241603C80094B498 /* InformationDisplayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationDisplayTests.swift; sourceTree = "<group>"; };
 		D3C23A50241606150094B498 /* ChickenCoopMockAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChickenCoopMockAPI.swift; sourceTree = "<group>"; };
+		D3C23A522416318B0094B498 /* FileSavingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSavingTests.swift; sourceTree = "<group>"; };
 		D3DC3D69240501C800D28DEA /* TechReadsPod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TechReadsPod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3DC3D6C240501C800D28DEA /* TechReadsPod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TechReadsPod.h; sourceTree = "<group>"; };
 		D3DC3D6D240501C800D28DEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				D39E12FA2410C43E006F3FE0 /* Info.plist */,
 				D3C23A4E241603C80094B498 /* InformationDisplayTests.swift */,
 				D3C23A50241606150094B498 /* ChickenCoopMockAPI.swift */,
+				D3C23A522416318B0094B498 /* FileSavingTests.swift */,
 			);
 			path = TechReadsPodTests;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				D39E12F92410C43E006F3FE0 /* TextFormattingTests.swift in Sources */,
 				D3C23A51241606150094B498 /* ChickenCoopMockAPI.swift in Sources */,
 				D3C23A4F241603C80094B498 /* InformationDisplayTests.swift in Sources */,
+				D3C23A532416318B0094B498 /* FileSavingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

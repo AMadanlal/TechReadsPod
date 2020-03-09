@@ -16,21 +16,22 @@ public class ChickenCoopMockAPI: APICallsProtocol {
     gamelist.query = ""
     gamelist.executionTime = 0
     gamelist.countResult = 0
-    gamelist.result = [GameListItem]()
+    gamelist.result = [GameListItem()]
     completionHandler(.success(gamelist))
   }
   public func getGameInfo(completionHandler: @escaping (Result<Game, Gameinfoerror>) -> Void) {
+    _ = Gameresponse()
     gamemodel = Game()
     gamemodel.title = "Mock Game"
     gamemodel.releaseDate = "22/03/1987"
     gamemodel.description = "A Mock GAme used for testing"
-    gamemodel.genre = [String]()
+    gamemodel.genre = ["fps", "tps", "racing"]
     gamemodel.image = "Insert URL of image here"
     gamemodel.score = 50
     gamemodel.developer = "Myself"
-    gamemodel.publisher = [String]()
+    gamemodel.publisher = ["EA", "UBISOFT"]
     gamemodel.rating = "E"
-    gamemodel.alsoAvailableOn = [String]()
+    gamemodel.alsoAvailableOn = ["xbox", "ps3"]
     completionHandler(.success(gamemodel))
   }
 }
