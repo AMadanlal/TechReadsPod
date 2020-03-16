@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class ChickenCoopAPI: APICallsProtocol {
+public class ChickenCoopAPI {
 
 //  class variables
   public var searchItem: String = ""
