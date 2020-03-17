@@ -9,11 +9,6 @@
 import Foundation
 
 public class ChickenCoopAPI {
-// enum for errors
-  public enum Gameinfoerror: Error {
-    case noDataAvailable
-    case canNotProcessData
-  }
 
 //  class variables
   public var searchItem: String = ""
