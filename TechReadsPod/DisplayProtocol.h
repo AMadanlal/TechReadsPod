@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TechReadsPod-Bridging-Header.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol DisplayProtocol
+@protocol DisplayProtocol <NSObject>
 - (void) todisplay;
 @end
 
