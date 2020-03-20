@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TechReadsPod-Bridging-Header.h"
 
 @interface NewProto : NSObject
 
 @property (strong, nonatomic) id someProperty;
 
 - (void) someMethod;
-
+- (NSString*) LoadStuff;
 @end
 //NS_ASSUME_NONNULL_END

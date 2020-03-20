@@ -16,5 +16,7 @@ FOUNDATION_EXPORT const unsigned char TechReadsPodVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <TechReadsPod/PublicHeader.h>
 #import <TechReadsPod/TechReadsPod-Bridging-Header.h>
+#import "DisplayProtocol.h"
+#import "NewProto.h"
 
 
