@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol DisplayProtocol <NSObject>
+@protocol DisplayProtocol
 - (void) todisplay;
 @end
 

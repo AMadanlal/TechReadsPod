@@ -13,8 +13,8 @@ import Foundation
      //      this is to load the data from the file
   public func loadmedium() -> String {
         var consolepref = ""
-        let np=NewProto.init()
-        consolepref = np.loadStuff()  //this is the obj C conversion for this function
+        let newp=NewProto.init()
+        consolepref = newp.loadStuff()  //this is the obj C conversion for this function
 //    if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
 //        let fileurl = dir.appendingPathComponent(file)
 //        do {
@@ -24,7 +24,6 @@ import Foundation
 //          print(error)
 //        }
 //      }
-    
     return consolepref
   }
 //  the following function is to save the console preference to a file
