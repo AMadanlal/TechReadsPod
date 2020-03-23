@@ -6,18 +6,14 @@
 //  Copyright © 2020 DVT. All rights reserved.
 //
 
-#import "NewProto.h"
+#import "SavingUtilities.h"
 
 NS_ASSUME_NONNULL_BEGIN
-@implementation NewProto
+@implementation SavingUtilities
 NSString *homeDir;
 NSString *filepath;
 NSFileManager *fileMgr;
 //NSString *filename = @"UserMedium.txt";
-
-- (void) someMethod {
-    NSLog(@"SomeMethod Ran");
-}
 
 -(NSString *)GetDocumentDirectory{
 fileMgr = [NSFileManager defaultManager];
@@ -25,7 +21,7 @@ homeDir = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
 return homeDir;
 }
 
-- (NSString*) LoadStuff {
+- (NSString*) LoadMedium {
   filepath = [[NSString alloc] init];
   filepath = [self.GetDocumentDirectory stringByAppendingPathComponent: @"UserMedium.txt"];
   NSError *error;
@@ -37,6 +33,16 @@ return homeDir;
   return filetext;
 }
 
+- (void) SaveMedium : (NSString*) tosave {
+  filepath = [[NSString alloc] init];
+  NSError *err;
+  filepath = [self.GetDocumentDirectory stringByAppendingPathComponent: @"UserMedium.txt"];
+  BOOL isOK = [tosave writeToFile:filepath atomically:YES encoding:NSUnicodeStringEncoding error:&err];
+  if (!isOK) {
+    NSLog(@"Error writing file at %@\n%@",
+    filepath, [err localizedFailureReason]);
+  }
+}
 
 @end
 NS_ASSUME_NONNULL_END

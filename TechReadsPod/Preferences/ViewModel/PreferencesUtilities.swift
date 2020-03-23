@@ -13,8 +13,8 @@ import Foundation
      //      this is to load the data from the file
   public func loadmedium() -> String {
         var consolepref = ""
-        let newp=NewProto.init()
-        consolepref = newp.loadStuff()  //this is the obj C conversion for this function
+        let utillities = SavingUtilities.init()
+        consolepref = utillities.loadMedium() //this is the obj C conversion for this function
 //    if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
 //        let fileurl = dir.appendingPathComponent(file)
 //        do {

@@ -17,8 +17,8 @@
 		D3C23A532416318B0094B498 /* FileSavingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C23A522416318B0094B498 /* FileSavingTests.swift */; };
 		D3DC3D6E240501C800D28DEA /* TechReadsPod.h in Headers */ = {isa = PBXBuildFile; fileRef = D3DC3D6C240501C800D28DEA /* TechReadsPod.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D3DC3D752405060000D28DEA /* StructPod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DC3D742405060000D28DEA /* StructPod.swift */; };
-		D3E9E0D62424952C00F46C74 /* NewProto.h in Headers */ = {isa = PBXBuildFile; fileRef = D3E9E0D52424952C00F46C74 /* NewProto.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D3E9E0D824249BBA00F46C74 /* NewProto.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E9E0D724249BBA00F46C74 /* NewProto.m */; };
+		D3E9E0D62424952C00F46C74 /* SavingUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = D3E9E0D52424952C00F46C74 /* SavingUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3E9E0D824249BBA00F46C74 /* SavingUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E9E0D724249BBA00F46C74 /* SavingUtilities.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,8 +46,8 @@
 		D3DC3D6C240501C800D28DEA /* TechReadsPod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TechReadsPod.h; sourceTree = "<group>"; };
 		D3DC3D6D240501C800D28DEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3DC3D742405060000D28DEA /* StructPod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructPod.swift; sourceTree = "<group>"; };
-		D3E9E0D52424952C00F46C74 /* NewProto.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; path = NewProto.h; sourceTree = "<group>"; };
-		D3E9E0D724249BBA00F46C74 /* NewProto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewProto.m; sourceTree = "<group>"; };
+		D3E9E0D52424952C00F46C74 /* SavingUtilities.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; path = SavingUtilities.h; sourceTree = "<group>"; };
+		D3E9E0D724249BBA00F46C74 /* SavingUtilities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SavingUtilities.m; sourceTree = "<group>"; };
 		D4DB2B6D9F56AEA0E346BF75 /* Pods_TechReadsPod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TechReadsPod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -120,8 +120,8 @@
 			isa = PBXGroup;
 			children = (
 				D391C0922423B1500085C93C /* TechReadsPod-Bridging-Header.h */,
-				D3E9E0D52424952C00F46C74 /* NewProto.h */,
-				D3E9E0D724249BBA00F46C74 /* NewProto.m */,
+				D3E9E0D52424952C00F46C74 /* SavingUtilities.h */,
+				D3E9E0D724249BBA00F46C74 /* SavingUtilities.m */,
 				D391C08C2423AA170085C93C /* DisplayProtocol.h */,
 				D3F62E94241F4BCC002F5398 /* CkickenCoopAPI */,
 				D3F62E92241F4B8E002F5398 /* Preferences */,
@@ -183,7 +183,7 @@
 			files = (
 				D3DC3D6E240501C800D28DEA /* TechReadsPod.h in Headers */,
 				D391C0932423B1500085C93C /* TechReadsPod-Bridging-Header.h in Headers */,
-				D3E9E0D62424952C00F46C74 /* NewProto.h in Headers */,
+				D3E9E0D62424952C00F46C74 /* SavingUtilities.h in Headers */,
 				D391C08D2423AA170085C93C /* DisplayProtocol.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,7 +342,7 @@
 				D3DC3D752405060000D28DEA /* StructPod.swift in Sources */,
 				D3A0ED622407969200798AE0 /* GameInfoProcess.swift in Sources */,
 				D3037F2324062EC000123532 /* PreferencesUtilities.swift in Sources */,
-				D3E9E0D824249BBA00F46C74 /* NewProto.m in Sources */,
+				D3E9E0D824249BBA00F46C74 /* SavingUtilities.m in Sources */,
 				D39BC9A824053CE9001C5EDE /* ChickenCoopAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
