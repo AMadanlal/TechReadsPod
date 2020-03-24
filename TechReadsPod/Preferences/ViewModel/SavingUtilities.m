@@ -34,8 +34,8 @@ return homeDir;
 
 - (void) SaveMedium : (NSString*) tosave {
   filepath = [[NSString alloc] init];
-  NSError *err;
   filepath = [self.GetDocumentDirectory stringByAppendingPathComponent: @"UserMedium.txt"];
+   NSError *err;
   BOOL isOK = [tosave writeToFile:filepath atomically:YES encoding:NSUTF8StringEncoding error:&err];
   if (!isOK) {
     NSLog(@"Error writing file at %@\n%@",
