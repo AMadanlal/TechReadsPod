@@ -13,7 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 NSString *homeDir;
 NSString *filepath;
 NSFileManager *fileMgr;
-//NSString *filename = @"UserMedium.txt";
 
 -(NSString *)GetDocumentDirectory{
 fileMgr = [NSFileManager defaultManager];
@@ -25,7 +24,7 @@ return homeDir;
   filepath = [[NSString alloc] init];
   filepath = [self.GetDocumentDirectory stringByAppendingPathComponent: @"UserMedium.txt"];
   NSError *error;
-  NSString *filetext = [[NSString alloc] initWithContentsOfFile:filepath encoding:NSUnicodeStringEncoding error: &error];
+  NSString *filetext = [[NSString alloc] initWithContentsOfFile:filepath encoding: NSUTF8StringEncoding error: &error];
   if (!filetext)
   {
     filetext = @"The platform coulnt be obtained";
@@ -37,7 +36,7 @@ return homeDir;
   filepath = [[NSString alloc] init];
   NSError *err;
   filepath = [self.GetDocumentDirectory stringByAppendingPathComponent: @"UserMedium.txt"];
-  BOOL isOK = [tosave writeToFile:filepath atomically:YES encoding:NSUnicodeStringEncoding error:&err];
+  BOOL isOK = [tosave writeToFile:filepath atomically:YES encoding:NSUTF8StringEncoding error:&err];
   if (!isOK) {
     NSLog(@"Error writing file at %@\n%@",
     filepath, [err localizedFailureReason]);

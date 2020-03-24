@@ -120,9 +120,6 @@
 			isa = PBXGroup;
 			children = (
 				D391C0922423B1500085C93C /* TechReadsPod-Bridging-Header.h */,
-				D3E9E0D52424952C00F46C74 /* SavingUtilities.h */,
-				D3E9E0D724249BBA00F46C74 /* SavingUtilities.m */,
-				D391C08C2423AA170085C93C /* DisplayProtocol.h */,
 				D3F62E94241F4BCC002F5398 /* CkickenCoopAPI */,
 				D3F62E92241F4B8E002F5398 /* Preferences */,
 				D3DC3D6C240501C800D28DEA /* TechReadsPod.h */,
@@ -142,6 +139,8 @@
 		D3F62E93241F4BA2002F5398 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D3E9E0D52424952C00F46C74 /* SavingUtilities.h */,
+				D3E9E0D724249BBA00F46C74 /* SavingUtilities.m */,
 				D3037F2224062EC000123532 /* PreferencesUtilities.swift */,
 			);
 			path = ViewModel;
@@ -159,6 +158,7 @@
 		D3F62E95241F4DB6002F5398 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D391C08C2423AA170085C93C /* DisplayProtocol.h */,
 				D3A0ED612407969200798AE0 /* GameInfoProcess.swift */,
 				D39BC9A724053CE9001C5EDE /* ChickenCoopAPI.swift */,
 			);
