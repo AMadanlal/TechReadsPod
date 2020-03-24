@@ -21,19 +21,15 @@ return homeDir;
 }
 
 - (NSString*) LoadMedium {
-//  filepath = [[NSString alloc] init];
-//  filepath = [self.GetDocumentDirectory stringByAppendingPathComponent: @"UserMedium.txt"];
-//  NSError *error;
-//  NSString *filetext = [[NSString alloc] initWithContentsOfFile:filepath encoding: NSUTF8StringEncoding error: &error];
-//  if (!filetext)
-//  {
-//    filetext = @"The platform coulnt be obtained";
-//  }
-//  return filetext;
-  NSString *docPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/UserMedium.txt"];
-  NSString *dataFile = [NSString stringWithContentsOfFile:docPath usedEncoding:NSUTF8StringEncoding
-      error:NULL];
-  return dataFile;
+  filepath = [[NSString alloc] init];
+  filepath = [self.GetDocumentDirectory stringByAppendingPathComponent: @"UserMedium.txt"];
+  NSError *error;
+  NSString *filetext = [[NSString alloc] initWithContentsOfFile:filepath encoding: NSUTF8StringEncoding error: &error];
+  if (!filetext)
+  {
+    filetext = @"The platform coulnt be obtained";
+  }
+  return filetext;
 }
 
 - (void) SaveMedium : (NSMutableString*) tosave {
