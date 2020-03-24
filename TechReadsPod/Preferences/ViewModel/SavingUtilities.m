@@ -35,33 +35,16 @@ return homeDir;
 //@param str String to write.
 //@param fileName Name of the file.
 
-- (void) SaveMedium : (NSMutableString*) tosave {
+- (void) SaveMedium : (NSMutableString*) tosave : (NSString*) fileurlstring {
 //  filepath = [[NSString alloc] init];
 //  filepath = [self.GetDocumentDirectory stringByAppendingPathComponent: @"UserMedium.txt"];
-//   NSError *err;
-//  BOOL isOK = [tosave writeToFile:filepath atomically:YES encoding:NSUTF8StringEncoding error:&err];
-//  if (!isOK) {
-//    NSLog(@"Error writing file at %@\n%@",
-//    filepath, [err localizedFailureReason]);
-  NSData *data = [tosave dataUsingEncoding:NSUTF8StringEncoding];
-      NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-      if (0 < [paths count]) {
-          NSString *documentsDirPath = [paths objectAtIndex:0];
-          NSString *filePath = [documentsDirPath stringByAppendingPathComponent:@"UserMedium.txt"];
-          NSFileManager *fileManager = [NSFileManager defaultManager];
-          if ([fileManager fileExistsAtPath:filePath]) {
-              // Add the text at the end of the file.
-              NSFileHandle *fileHandler = [NSFileHandle fileHandleForUpdatingAtPath:filePath];
-  //            [fileHandler seekToEndOfFile];
-              [fileHandler writeData:data];
-              [fileHandler closeFile];
-          } else {
-              // Create the file and write text to it.
-              [data writeToFile:filePath atomically:YES];
-          }
-      }
-  
+   NSError *err;
+  BOOL isOK = [tosave writeToFile:fileurlstring atomically:YES encoding:NSUTF8StringEncoding error:&err];
+  if (!isOK) {
+    NSLog(@"Error writing file at %@\n%@",
+    filepath, [err localizedFailureReason]);
   }
+}
  
 
 

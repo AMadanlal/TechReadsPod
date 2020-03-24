@@ -12,6 +12,6 @@
 @interface SavingUtilities : NSObject
 
 - (NSString*) LoadMedium;
-- (void) SaveMedium: (NSMutableString*) tosave;
+- (void) SaveMedium: (NSMutableString*) tosave : (NSString*) fileurlstring;
 @end
 //NS_ASSUME_NONNULL_END

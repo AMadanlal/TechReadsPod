@@ -29,15 +29,19 @@ import Foundation
 //  the following function is to save the console preference to a file
   public func savemedium(medium: String) {
     let utillities = SavingUtilities.init()
-    utillities.saveMedium(medium as? NSMutableString)
-//    if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-//      let fileurl = dir.appendingPathComponent(file)
-//      do {
+  
+    
+    if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+      let fileurl = dir.appendingPathComponent(file)
+      do {
+        
+        utillities.saveMedium(medium as? NSMutableString, fileurl.absoluteString)//this has the line for saving
+        
 //        try medium.write(to: fileurl, atomically: false, encoding: .utf8)
-//      } catch {
-//        print(error)
-//      }
-//    }
+      } catch {
+        print(error)
+      }
+    }
   }
 //  this function loads genres onto the page
   public func loadGenre() -> String {
