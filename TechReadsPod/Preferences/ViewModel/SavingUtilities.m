@@ -32,7 +32,7 @@ return homeDir;
   return filetext;
 }
 
-- (void) SaveMedium : (NSString*) tosave {
+- (void) SaveMedium : (NSMutableString*) tosave {
   filepath = [[NSString alloc] init];
   filepath = [self.GetDocumentDirectory stringByAppendingPathComponent: @"UserMedium.txt"];
    NSError *err;
