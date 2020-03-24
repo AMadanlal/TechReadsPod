@@ -32,21 +32,6 @@ return homeDir;
   return filetext;
 }
 
-//@param str String to write.
-//@param fileName Name of the file.
-
-- (void) SaveMedium : (NSMutableString*) tosave : (NSString*) fileurlstring {
-//  filepath = [[NSString alloc] init];
-//  filepath = [self.GetDocumentDirectory stringByAppendingPathComponent: @"UserMedium.txt"];
-   NSError *err;
-  BOOL isOK = [tosave writeToFile:fileurlstring atomically:YES encoding:NSUTF8StringEncoding error:&err];
-  if (!isOK) {
-    NSLog(@"Error writing file at %@\n%@",
-    filepath, [err localizedFailureReason]);
-  }
-}
- 
-
 
 
 @end
