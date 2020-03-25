@@ -25,29 +25,8 @@ public class DisplayClass: DisplayProtocol {
       titleLabel.text = gameModel.title
   //this part formats the different string arrays better
       let simplifiedGenreString = stringArrayFormatter(textArray: gameModel.genre)
-//      for gen in gameModel.genre {
-//        if gen == gameModel.genre[gameModel.genre.count-1] {
-//            simplifiedgenrestring += gen
-//          } else {
-//            simplifiedgenrestring += gen + ", "
-//          }
-//        }
       let simplifiedPublisherString =  stringArrayFormatter(textArray: gameModel.publisher)
-//      for pub in gameModel.publisher {
-//      if pub == gameModel.publisher[gameModel.publisher.count-1] {
-//          simplifiedpublisherstring += pub
-//        } else {
-//          simplifiedpublisherstring += pub + ", "
-//        }
-//      }
       let simplifiedConsoleString = stringArrayFormatter(textArray: gameModel.alsoAvailableOn)
-//      for console in gameModel.alsoAvailableOn {
-//      if console == gameModel.alsoAvailableOn[gameModel.alsoAvailableOn.count-1] {
-//          simplifiedconsolestring += console
-//        } else {
-//          simplifiedconsolestring += console + ", "
-//        }
-//      }
   //the next string contains the content to be shown to the user in a specific format
       let fullText = """
       Release Date: \(gameModel.releaseDate)
@@ -60,7 +39,7 @@ public class DisplayClass: DisplayProtocol {
       Score: \(gameModel.score)
       """
 //    this is to load the image onto the page
-    loadimage()
+      loadimage()
 //  this line assigns the formatted text to the description UITextView
       textView.text = fullText
     }
@@ -75,7 +54,7 @@ public class DisplayClass: DisplayProtocol {
         }
     }
   }
-  
+
   func stringArrayFormatter(textArray: [String]) -> String {
     var formattedString: String = ""
     for text in textArray {

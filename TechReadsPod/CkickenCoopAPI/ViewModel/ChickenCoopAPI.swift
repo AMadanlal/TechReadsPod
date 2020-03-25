@@ -115,7 +115,6 @@ public class ChickenCoopAPI {
 
 //  this function gets the list of games
    public func getGameList(completionHandler: @escaping(Result<GameList, Gameinfoerror>) -> Void) {
-//    remember to format the search item to support spaces in url format
     let request = NSMutableURLRequest(url: NSURL(string:
     "https://chicken-coop.p.rapidapi.com/games?title=" +
       "\(searchItem.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "")" +
