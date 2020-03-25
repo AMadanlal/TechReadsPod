@@ -10,20 +10,11 @@ import Foundation
 
   public let file = "UserMedium.txt" //this is the name of the file for the user medium
   public let genrefile = "UserGenres.txt" //this is the name of the file with the user genres
-     //      this is to load the data from the file
+     //      this function loads data from the file
   public func loadmedium() -> String {
         var consolepref = ""
         let utillities = SavingUtilities.init()
-        consolepref = utillities.loadMedium() //this is the obj C conversion for this function
-//    if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-//        let fileurl = dir.appendingPathComponent(file)
-//        do {
-//          let datafromfile = try String(contentsOf: fileurl, encoding: .utf8)
-//          consolepref = datafromfile
-//        } catch {
-//          print(error)
-//        }
-//      }
+        consolepref = utillities.loadMedium()
     return consolepref
   }
 //  the following function is to save the console preference to a file
