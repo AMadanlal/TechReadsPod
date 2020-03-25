@@ -8,7 +8,7 @@
 import UIKit
 import Foundation
 
-public class DisplayClass: DisplayProtocol {
+public class FormattingDisplayClass: DisplayProtocol {
   var gameModel: Game!
   var titleLabel: UILabel!
   var textView: UITextView!
