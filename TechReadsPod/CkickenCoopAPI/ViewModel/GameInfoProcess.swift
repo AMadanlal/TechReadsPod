@@ -9,9 +9,9 @@ import UIKit
 import Foundation
 
 public class FormattingDisplayClass: DisplayProtocol {
-  var gameModel: Game!
-  var titleLabel: UILabel!
-  var textView: UITextView!
+  var gameModel: Game
+  var titleLabel: UILabel
+  var textView: UITextView
   var imagePlace: UIImageView
 
   public init(gameM: Game, lblTitle: UILabel, txtView: UITextView, imgView: UIImageView) {
