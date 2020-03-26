@@ -58,15 +58,8 @@ import Foundation
 @objc class PreferenceUtilities: NSObject {
 
   //  the following function is to save the console preference to a file
-  public func savemedium(medium: String) {
-    if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-      let fileurl = dir.appendingPathComponent(file)
-      do {
-       try medium.write(to: fileurl, atomically: false, encoding: .utf8)
-      } catch {
-        print(error)
-      }
-    }
+  public func saveMedium(savingPref: String) {
+    savemedium(medium: savingPref)
   }
 
 }
