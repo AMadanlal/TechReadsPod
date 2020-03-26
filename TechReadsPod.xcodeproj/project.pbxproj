@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		35EEDF5168939519F3466943 /* Pods_TechReadsPod.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DB2B6D9F56AEA0E346BF75 /* Pods_TechReadsPod.framework */; };
 		D3037F2324062EC000123532 /* PreferencesUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3037F2224062EC000123532 /* PreferencesUtilities.swift */; };
+		D391C08D2423AA170085C93C /* DisplayProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = D391C08C2423AA170085C93C /* DisplayProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D391C0932423B1500085C93C /* TechReadsPod-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = D391C0922423B1500085C93C /* TechReadsPod-Bridging-Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D39BC9A824053CE9001C5EDE /* ChickenCoopAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39BC9A724053CE9001C5EDE /* ChickenCoopAPI.swift */; };
 		D39E12FB2410C43E006F3FE0 /* TechReadsPod.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3DC3D69240501C800D28DEA /* TechReadsPod.framework */; };
 		D3A0ED622407969200798AE0 /* GameInfoProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A0ED612407969200798AE0 /* GameInfoProcess.swift */; };
 		D3C23A532416318B0094B498 /* FileSavingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C23A522416318B0094B498 /* FileSavingTests.swift */; };
 		D3DC3D6E240501C800D28DEA /* TechReadsPod.h in Headers */ = {isa = PBXBuildFile; fileRef = D3DC3D6C240501C800D28DEA /* TechReadsPod.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D3DC3D752405060000D28DEA /* StructPod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DC3D742405060000D28DEA /* StructPod.swift */; };
+		D3E9E0D62424952C00F46C74 /* SavingUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = D3E9E0D52424952C00F46C74 /* SavingUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3E9E0D824249BBA00F46C74 /* SavingUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E9E0D724249BBA00F46C74 /* SavingUtilities.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +35,8 @@
 		1F4D8D47E04DB46A3E5121DC /* Pods-TechReadsPod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TechReadsPod.release.xcconfig"; path = "Target Support Files/Pods-TechReadsPod/Pods-TechReadsPod.release.xcconfig"; sourceTree = "<group>"; };
 		2FBD5118F33F151E961F3B6F /* Pods-TechReadsPod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TechReadsPod.debug.xcconfig"; path = "Target Support Files/Pods-TechReadsPod/Pods-TechReadsPod.debug.xcconfig"; sourceTree = "<group>"; };
 		D3037F2224062EC000123532 /* PreferencesUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesUtilities.swift; sourceTree = "<group>"; };
+		D391C08C2423AA170085C93C /* DisplayProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DisplayProtocol.h; sourceTree = "<group>"; };
+		D391C0922423B1500085C93C /* TechReadsPod-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TechReadsPod-Bridging-Header.h"; sourceTree = "<group>"; };
 		D39BC9A724053CE9001C5EDE /* ChickenCoopAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChickenCoopAPI.swift; sourceTree = "<group>"; };
 		D39E12F62410C43E006F3FE0 /* TechReadsPodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TechReadsPodTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D39E12FA2410C43E006F3FE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -40,6 +46,8 @@
 		D3DC3D6C240501C800D28DEA /* TechReadsPod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TechReadsPod.h; sourceTree = "<group>"; };
 		D3DC3D6D240501C800D28DEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3DC3D742405060000D28DEA /* StructPod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructPod.swift; sourceTree = "<group>"; };
+		D3E9E0D52424952C00F46C74 /* SavingUtilities.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; path = SavingUtilities.h; sourceTree = "<group>"; };
+		D3E9E0D724249BBA00F46C74 /* SavingUtilities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SavingUtilities.m; sourceTree = "<group>"; };
 		D4DB2B6D9F56AEA0E346BF75 /* Pods_TechReadsPod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TechReadsPod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -111,6 +119,7 @@
 		D3DC3D6B240501C800D28DEA /* TechReadsPod */ = {
 			isa = PBXGroup;
 			children = (
+				D391C0922423B1500085C93C /* TechReadsPod-Bridging-Header.h */,
 				D3F62E94241F4BCC002F5398 /* CkickenCoopAPI */,
 				D3F62E92241F4B8E002F5398 /* Preferences */,
 				D3DC3D6C240501C800D28DEA /* TechReadsPod.h */,
@@ -130,6 +139,8 @@
 		D3F62E93241F4BA2002F5398 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D3E9E0D52424952C00F46C74 /* SavingUtilities.h */,
+				D3E9E0D724249BBA00F46C74 /* SavingUtilities.m */,
 				D3037F2224062EC000123532 /* PreferencesUtilities.swift */,
 			);
 			path = ViewModel;
@@ -147,6 +158,7 @@
 		D3F62E95241F4DB6002F5398 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D391C08C2423AA170085C93C /* DisplayProtocol.h */,
 				D3A0ED612407969200798AE0 /* GameInfoProcess.swift */,
 				D39BC9A724053CE9001C5EDE /* ChickenCoopAPI.swift */,
 			);
@@ -170,6 +182,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3DC3D6E240501C800D28DEA /* TechReadsPod.h in Headers */,
+				D391C0932423B1500085C93C /* TechReadsPod-Bridging-Header.h in Headers */,
+				D3E9E0D62424952C00F46C74 /* SavingUtilities.h in Headers */,
+				D391C08D2423AA170085C93C /* DisplayProtocol.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +342,7 @@
 				D3DC3D752405060000D28DEA /* StructPod.swift in Sources */,
 				D3A0ED622407969200798AE0 /* GameInfoProcess.swift in Sources */,
 				D3037F2324062EC000123532 /* PreferencesUtilities.swift in Sources */,
+				D3E9E0D824249BBA00F46C74 /* SavingUtilities.m in Sources */,
 				D39BC9A824053CE9001C5EDE /* ChickenCoopAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,6 +370,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = za.co.dvt.TechReadsPodTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -371,6 +388,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = za.co.dvt.TechReadsPodTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -433,6 +451,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/$(PROJECT_NAME)/$(PROJECT_NAME)-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -489,6 +508,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/$(PROJECT_NAME)/$(PROJECT_NAME)-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -516,7 +536,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = za.co.dvt.TechReadsPod;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -542,6 +564,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = za.co.dvt.TechReadsPod;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
