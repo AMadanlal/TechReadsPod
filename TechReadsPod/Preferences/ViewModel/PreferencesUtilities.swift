@@ -54,3 +54,11 @@ import Foundation
          }
        }
   }
+
+@objc public class PreferenceUtilities: NSObject {
+  //  the following function is to save the console preference to a file
+  @objc public func saveMedium(savingPref: String) {
+    savemedium(medium: savingPref)
+  }
+
+}
