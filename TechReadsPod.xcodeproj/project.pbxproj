@@ -9,8 +9,10 @@
 /* Begin PBXBuildFile section */
 		35EEDF5168939519F3466943 /* Pods_TechReadsPod.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DB2B6D9F56AEA0E346BF75 /* Pods_TechReadsPod.framework */; };
 		D3037F2324062EC000123532 /* PreferencesUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3037F2224062EC000123532 /* PreferencesUtilities.swift */; };
+		D359C14E242E30AB0064F1C5 /* RandomGameReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = D359C14D242E30AB0064F1C5 /* RandomGameReview.swift */; };
 		D391C08D2423AA170085C93C /* DisplayProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = D391C08C2423AA170085C93C /* DisplayProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D391C0932423B1500085C93C /* TechReadsPod-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = D391C0922423B1500085C93C /* TechReadsPod-Bridging-Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D39986F6242E0FF100A08717 /* AnalyticsSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39986F5242E0FF100A08717 /* AnalyticsSetup.swift */; };
 		D39BC9A824053CE9001C5EDE /* ChickenCoopAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39BC9A724053CE9001C5EDE /* ChickenCoopAPI.swift */; };
 		D39E12FB2410C43E006F3FE0 /* TechReadsPod.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3DC3D69240501C800D28DEA /* TechReadsPod.framework */; };
 		D3A0ED622407969200798AE0 /* GameInfoProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A0ED612407969200798AE0 /* GameInfoProcess.swift */; };
@@ -35,8 +37,10 @@
 		1F4D8D47E04DB46A3E5121DC /* Pods-TechReadsPod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TechReadsPod.release.xcconfig"; path = "Target Support Files/Pods-TechReadsPod/Pods-TechReadsPod.release.xcconfig"; sourceTree = "<group>"; };
 		2FBD5118F33F151E961F3B6F /* Pods-TechReadsPod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TechReadsPod.debug.xcconfig"; path = "Target Support Files/Pods-TechReadsPod/Pods-TechReadsPod.debug.xcconfig"; sourceTree = "<group>"; };
 		D3037F2224062EC000123532 /* PreferencesUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesUtilities.swift; sourceTree = "<group>"; };
+		D359C14D242E30AB0064F1C5 /* RandomGameReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomGameReview.swift; sourceTree = "<group>"; };
 		D391C08C2423AA170085C93C /* DisplayProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DisplayProtocol.h; sourceTree = "<group>"; };
 		D391C0922423B1500085C93C /* TechReadsPod-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TechReadsPod-Bridging-Header.h"; sourceTree = "<group>"; };
+		D39986F5242E0FF100A08717 /* AnalyticsSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsSetup.swift; sourceTree = "<group>"; };
 		D39BC9A724053CE9001C5EDE /* ChickenCoopAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChickenCoopAPI.swift; sourceTree = "<group>"; };
 		D39E12F62410C43E006F3FE0 /* TechReadsPodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TechReadsPodTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D39E12FA2410C43E006F3FE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -87,6 +91,14 @@
 			path = model;
 			sourceTree = "<group>";
 		};
+		D39986F4242E0FCB00A08717 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				D39986F5242E0FF100A08717 /* AnalyticsSetup.swift */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
 		D39E12F72410C43E006F3FE0 /* TechReadsPodTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +131,7 @@
 		D3DC3D6B240501C800D28DEA /* TechReadsPod */ = {
 			isa = PBXGroup;
 			children = (
+				D39986F4242E0FCB00A08717 /* Analytics */,
 				D391C0922423B1500085C93C /* TechReadsPod-Bridging-Header.h */,
 				D3F62E94241F4BCC002F5398 /* CkickenCoopAPI */,
 				D3F62E92241F4B8E002F5398 /* Preferences */,
@@ -161,6 +174,7 @@
 				D391C08C2423AA170085C93C /* DisplayProtocol.h */,
 				D3A0ED612407969200798AE0 /* GameInfoProcess.swift */,
 				D39BC9A724053CE9001C5EDE /* ChickenCoopAPI.swift */,
+				D359C14D242E30AB0064F1C5 /* RandomGameReview.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -341,6 +355,8 @@
 			files = (
 				D3DC3D752405060000D28DEA /* StructPod.swift in Sources */,
 				D3A0ED622407969200798AE0 /* GameInfoProcess.swift in Sources */,
+				D359C14E242E30AB0064F1C5 /* RandomGameReview.swift in Sources */,
+				D39986F6242E0FF100A08717 /* AnalyticsSetup.swift in Sources */,
 				D3037F2324062EC000123532 /* PreferencesUtilities.swift in Sources */,
 				D3E9E0D824249BBA00F46C74 /* SavingUtilities.m in Sources */,
 				D39BC9A824053CE9001C5EDE /* ChickenCoopAPI.swift in Sources */,

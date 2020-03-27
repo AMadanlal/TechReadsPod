@@ -6,6 +6,7 @@ target 'TechReadsPod' do
   use_frameworks!
 
   # Pods for TechReadsPod
-
+	# add the Firebase pod for Google Analytics
+	pod 'Firebase/Analytics'
 
 end
