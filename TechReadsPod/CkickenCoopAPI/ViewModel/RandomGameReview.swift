@@ -37,9 +37,10 @@ public class RandomGameReview {
             let randomInt = Int.random(in: 0..<gameList.result.count)
             listItem  = gameList.result[randomInt]
           }
+          completionHandler(listItem)
         }
       }
     }
-      completionHandler(listItem)
+     
   }
 }
