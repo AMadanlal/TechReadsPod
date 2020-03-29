@@ -9,6 +9,8 @@
 import Foundation
 public class RandomGameReview {
 
+  public init() {}
+
   public func getRandomGameFromList(completionHandler: @escaping(GameListItem) -> Void) {
     let utillities = SavingUtilities.init()
     var listItem = GameListItem()
