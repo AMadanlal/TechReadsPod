@@ -9,7 +9,7 @@
 import Foundation
 public class RandomGameReview {
 
-  public func getRandomGameFromList() -> GameListItem {
+  public func getRandomGameFromList(completionHandler: @escaping(GameListItem) -> Void) {
     let utillities = SavingUtilities.init()
     var listItem = GameListItem()
     var compatableGameList = [GameListItem]()
@@ -38,6 +38,6 @@ public class RandomGameReview {
         }
       }
     }
-      return listItem
+      completionHandler(listItem)
   }
 }
