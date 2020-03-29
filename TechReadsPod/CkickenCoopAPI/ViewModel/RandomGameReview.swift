@@ -25,10 +25,15 @@ public class RandomGameReview {
           for item in gameList.result where item.platform == platformSearch {
               compatableGameList.append(item)
           }
-          if compatableGameList.count == 0 {
-//            insert random game from the list here
-          } else if compatableGameList.count == 1 {
-            listItem = compatableGameList.first! //explicit unwrapping... find a way around it
+          if compatableGameList.count == 1 {
+             listItem = compatableGameList[0]
+          } else if compatableGameList.count > 1 {
+            let randomInt = Int.random(in: 0..<compatableGameList.count)
+  //            insert random game from the list here
+            listItem = compatableGameList[randomInt]
+          } else if compatableGameList.count == 0 {
+            let randomInt = Int.random(in: 0..<gameList.result.count)
+            listItem  = gameList.result[randomInt]
           }
         }
       }
