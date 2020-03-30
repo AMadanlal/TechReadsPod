@@ -7,6 +7,6 @@ target 'TechReadsPod' do
 
   # Pods for TechReadsPod
 	# add the Firebase pod for Google Analytics
-	pod 'Firebase/Analytics'
+	# pod 'Firebase/Analytics'
 
 end
