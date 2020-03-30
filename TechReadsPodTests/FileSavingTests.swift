@@ -8,7 +8,7 @@
 
 import Foundation
 import XCTest
-@testable import TechReadsPod
+//@testable import TechReadsPod
 
 class FileSavingTests: XCTestCase {
   override func setUp() {
