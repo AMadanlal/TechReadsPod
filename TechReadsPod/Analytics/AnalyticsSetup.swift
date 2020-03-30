@@ -38,6 +38,6 @@ public class AnalyticsSetup {
 //  "name": name as NSObject,
 //  "full_text": text as NSObject
 //  ])
-//  }
+  }
 
 }
