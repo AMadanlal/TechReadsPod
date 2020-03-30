@@ -8,7 +8,7 @@
       <BuildActionEntries>
          <BuildActionEntry
             buildForTesting = "YES"
-            buildForRunning = "NO"
+            buildForRunning = "YES"
             buildForProfiling = "YES"
             buildForArchiving = "YES"
             buildForAnalyzing = "YES">
@@ -17,20 +17,6 @@
                BlueprintIdentifier = "D3DC3D68240501C800D28DEA"
                BuildableName = "TechReadsPod.framework"
                BlueprintName = "TechReadsPod"
-               ReferencedContainer = "container:TechReadsPod.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D39E12F52410C43E006F3FE0"
-               BuildableName = "TechReadsPodTests.xctest"
-               BlueprintName = "TechReadsPodTests"
                ReferencedContainer = "container:TechReadsPod.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

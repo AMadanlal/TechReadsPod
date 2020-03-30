@@ -11,7 +11,7 @@ public class ChickenCoopAPI {
 
 //  class variables
   public var searchItem: String = ""
-  public var gamePlatform: String = "pc" //this is made public in order for the other class to modify it
+  public var gamePlatform: String = "pc"
   public var gamedetails = Game()
   public var gamelist = GameList()
 //  this is the headers that include the host and the unique key given to a user to access the api
@@ -81,7 +81,6 @@ public class ChickenCoopAPI {
   }
 //  this gets the individual game information
    public func getGameInfo( completionHandler: @escaping( Result<Game, Gameinfoerror>) -> Void) {
-//    create the initial request for the data using API documentation
     let formattedplatform = formatplatformstring(stringtoformat: gamePlatform)
     let request = NSMutableURLRequest(url: NSURL(
       string: "https://chicken-coop.p.rapidapi.com/games" +
@@ -90,9 +89,7 @@ public class ChickenCoopAPI {
       "")! as URL, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
     request.httpMethod = "GET"
     request.allHTTPHeaderFields = headers
-//    create the session
     let session = URLSession.shared
-//    make the call an get the data
     let dataTask = session.dataTask(with: request as URLRequest) { data, _, _ in
       guard let jsonData = data else {
         completionHandler(.failure(.noDataAvailable))

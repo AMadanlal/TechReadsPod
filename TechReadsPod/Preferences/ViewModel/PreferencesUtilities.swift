@@ -9,16 +9,15 @@
 import Foundation
 
   public let file = "UserMedium.txt" //this is the name of the file for the user medium
-  public let genrefile = "UserGenres.txt" //this is the name of the file with the user genres
-     //      this function loads data from the file
-  public func loadmedium() -> String {
+
+  public func loadMedium() -> String {
         var consolepref = ""
         let utillities = SavingUtilities.init()
         consolepref = utillities.loadMedium()
     return consolepref
   }
 //  the following function is to save the console preference to a file
-  public func savemedium(medium: String) {
+  public func savingMedium(medium: String) {
     if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
       let fileurl = dir.appendingPathComponent(file)
       do {
@@ -28,37 +27,11 @@ import Foundation
       }
     }
   }
-//  this function loads genres onto the page
-  public func loadGenre() -> String {
-    var genrestring = " "
-    if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-         let fileurl = dir.appendingPathComponent(genrefile)
-         do {
-           let datafromfile = try String(contentsOf: fileurl, encoding: .utf8)
-           genrestring = datafromfile
-         } catch {
-           print(error)
-           genrestring = "List of Genre's: "
-         }
-       }
-    return genrestring
-  }
-//  this function saves the genre to the file
-  public func saveGenre(genretosave: String) {
-    if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-         let fileurl = dir.appendingPathComponent(genrefile)
-         do {
-           try genretosave.write(to: fileurl, atomically: false, encoding: .utf8)
-         } catch {
-           print(error)
-         }
-       }
-  }
 
 @objc public class PreferenceUtilities: NSObject {
   //  the following function is to save the console preference to a file
   @objc public func saveMedium(savingPref: String) {
-    savemedium(medium: savingPref)
+    savingMedium(medium: savingPref)
   }
 
 }
