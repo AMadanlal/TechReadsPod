@@ -8,6 +8,12 @@
 
 import Foundation
 
+// enum for errors
+public enum Gameinfoerror: Error {
+  case noDataAvailable
+  case canNotProcessData
+}
+
 //  struct for the gamelist items
   public struct GameListItem: Decodable {
     public var title: String
@@ -63,4 +69,3 @@ import Foundation
       rating = ""
     }
 }
-
