@@ -10,7 +10,9 @@ import Foundation
 
 public class NewsAPICalls {
 
-  func getNewsList(completionHandler: @escaping(Result<NewsSource, Newsinfoerror>) ->
+  public init() { }
+
+  public func getNewsList(completionHandler: @escaping(Result<NewsSource, Newsinfoerror>) ->
       Void) {
       let request = NSMutableURLRequest(url: NSURL(string: "https://newsapi" +
         ".org/v2/top-headlines?country=za&category=technology&" +
@@ -35,11 +37,11 @@ public class NewsAPICalls {
       }
       dataTask.resume()
     }
-  func getRandomArticle(allArticles: NewsSource) -> NewsSource.Article {
+  public func getRandomArticle(allArticles: NewsSource) -> NewsSource.Article {
     return allArticles.articles.randomElement() ?? NewsSource.Article()
   }
 
-  func getArticleTextFormat(theArticle: NewsSource.Article) {
+  public func getArticleTextFormat(theArticle: NewsSource.Article) {
         let urlString: String = "https://techreadsapi.herokuapp.com/NewsArticleFormatter"
         let json = theArticle
         let jsonData = try? JSONEncoder().encode(json)

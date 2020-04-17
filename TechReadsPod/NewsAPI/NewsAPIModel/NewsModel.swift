@@ -16,19 +16,19 @@ public enum Newsinfoerror: Error {
 //Codable Struct to represent JSON payload found at source:
 //https://github.com/DanKorkelia/News-API-swift/blob/master/News-API%20Playground.playground/Contents.swift
 public struct NewsSource: Codable {
-    public let status: String?
-    public let totalResults: Int?
+    public var status: String?
+    public var totalResults: Int?
     public struct Article: Codable {
-       public let source: Source
-       public let author: String?
-       public let title: String?
-       public let description: String?
-       public let url: URL?
-       public let urlToImage: URL?
-       public let publishedAt: String?
+       public var source: Source
+       public var author: String?
+       public var title: String?
+       public var description: String?
+       public var url: URL?
+       public var urlToImage: URL?
+       public var publishedAt: String?
         public struct Source: Codable {
-          public let id: String?
-          public let name: String?
+          public var id: String?
+          public var name: String?
           public init() { id = ""; name = ""}
         }
       public init() {
@@ -41,6 +41,6 @@ public struct NewsSource: Codable {
         publishedAt = ""
       }
     }
-    public let articles: [Article]
+    public var articles: [Article]
   public init() { status = ""; totalResults = 0; articles = [Article]() }
 }
