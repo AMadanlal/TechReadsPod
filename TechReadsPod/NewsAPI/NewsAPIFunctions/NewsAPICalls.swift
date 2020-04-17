@@ -41,7 +41,8 @@ public class NewsAPICalls {
     return allArticles.articles.randomElement() ?? NewsSource.Article()
   }
 
-  public func getArticleTextFormat(theArticle: NewsSource.Article) {
+  public func getArticleTextFormat(theArticle: NewsSource.Article,
+                                   completionHandler: @escaping(String) -> Void) {
         let urlString: String = "https://techreadsapi.herokuapp.com/NewsArticleFormatter"
         let json = theArticle
         let jsonData = try? JSONEncoder().encode(json)
@@ -58,9 +59,7 @@ public class NewsAPICalls {
             }
          let responseJSON = String(data: data, encoding: .utf8)
          if let responseJSON = responseJSON {
-              DispatchQueue.main.async {
-                print(responseJSON) // TO-DO: NEED TO MODIFY A WAY TO USE THIS DISPATCH QUEUE TO SEND DATA
-             }
+              completionHandler(responseJSON) //return the article in a completion handler
             }
         }
        task.resume()
