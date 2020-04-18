@@ -26,6 +26,7 @@ public struct NewsSource: Codable {
        public var url: URL?
        public var urlToImage: URL?
        public var publishedAt: String?
+      public var content: String?
         public struct Source: Codable {
           public var id: String?
           public var name: String?
@@ -39,6 +40,7 @@ public struct NewsSource: Codable {
         url = URL(string: "")
         urlToImage = URL(string: "")
         publishedAt = ""
+        content = ""
       }
     }
     public var articles: [Article]
