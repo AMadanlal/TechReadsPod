@@ -24,7 +24,7 @@ class NewsURLRequest {
                              timeoutInterval: 10.0)
     let headers = ["pageSize": urlPageSize,
                    "category": catagory,
-                   "apiKey": apiKey]
+                   "X-Api-Key": apiKey]
     request.allHTTPHeaderFields = headers
     request.httpMethod = "GET"
     return request
