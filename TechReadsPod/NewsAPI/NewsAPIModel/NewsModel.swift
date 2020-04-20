@@ -15,6 +15,7 @@ public enum Newsinfoerror: Error {
 
 //Codable Struct to represent JSON payload found at source:
 //https://github.com/DanKorkelia/News-API-swift/blob/master/News-API%20Playground.playground/Contents.swift
+//swiftlint:disable all
 public struct NewsSource: Codable {
     public var status: String?
     public var totalResults: Int?
@@ -46,3 +47,4 @@ public struct NewsSource: Codable {
     public var articles: [Article]
   public init() { status = ""; totalResults = 0; articles = [Article]() }
 }
+//swiftlint:enable all
