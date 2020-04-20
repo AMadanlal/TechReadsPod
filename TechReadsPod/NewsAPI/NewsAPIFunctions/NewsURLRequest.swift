@@ -30,4 +30,17 @@ class NewsURLRequest {
     return request
   }
 
+  public func getCustomNewsUrlRequest() -> URLRequest {
+    var request = URLRequest(url: URL(string: newsURL)! as URL,
+                             cachePolicy: .useProtocolCachePolicy,
+                             timeoutInterval: 10.0)
+    let headers = ["q": searchText,
+                   "pageSize": urlPageSize,
+                   "category": catagory,
+                   "X-Api-Key": apiKey]
+    request.allHTTPHeaderFields = headers
+    request.httpMethod = "GET"
+    return request
+  }
+
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum Newsinfoerror: Error {
+public enum NewsInfoError: Error {
   case noDataAvailable(String)
   case canNotProcessData(String)
 }

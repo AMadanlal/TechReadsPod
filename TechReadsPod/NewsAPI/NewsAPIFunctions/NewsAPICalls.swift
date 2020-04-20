@@ -12,59 +12,54 @@ public class NewsAPICalls {
 
   public init() { }
 
-  public func getCustomNewsList(searchitem: String, completionHandler: @escaping(Result<NewsSource, Newsinfoerror>) ->
+  public func getCustomNewsList(searchitem: String, completionHandler: @escaping(Result<NewsSource, NewsInfoError>) ->
        Void) {
     let formattedSearchString = searchitem.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
-       let request = NSMutableURLRequest(url: NSURL(string: "https://newsapi" +
-        ".org/v2/top-headlines?country=za&category=technology&q=\(formattedSearchString ?? "")&" +
-         "pagesize=10&apiKey=db03aae8ea77408ab75aa849fae46298")! as URL,
-                                         cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
-       request.httpMethod = "GET"
-   //    NOT PUTTING HEADERS AS THEY ARE ALREADY IN THE URL STRING
-       let session = URLSession.shared
-       let dataTask = session.dataTask(with: request as URLRequest) { data, _, _ in
-         guard let jsonData = data else {
-           let error = Newsinfoerror.noDataAvailable("Data could not be obtained at the moment")
-           completionHandler(.failure(error))
-           return
-         }
-         do {
-          let decoder = JSONDecoder()
-          decoder.dateDecodingStrategy = .iso8601
-          let newsResponse = try decoder.decode(NewsSource.self, from: jsonData)
-          completionHandler(.success(newsResponse))
-         } catch {
-          let error = Newsinfoerror.canNotProcessData("Data is of unknown type")
-          completionHandler(.failure(error))
-         }
-       }
-        dataTask.resume()
-     }
+    let requestClass = NewsURLRequest(itemtoSearch: formattedSearchString ?? searchitem)
+    let request = requestClass.getCustomNewsUrlRequest()
+    let session = URLSession.shared
+    let dataTask = session.dataTask(with: request as URLRequest) { data, _, _ in
+    guard let jsonData = data else {
+      let error = NewsInfoError.noDataAvailable("Data could not be obtained at the moment")
+      completionHandler(.failure(error))
+      return
+    }
+    do {
+      let decoder = JSONDecoder()
+      decoder.dateDecodingStrategy = .iso8601
+      let newsResponse = try decoder.decode(NewsSource.self, from: jsonData)
+      completionHandler(.success(newsResponse))
+      } catch {
+      let error = NewsInfoError.canNotProcessData("Data is of unknown type")
+      completionHandler(.failure(error))
+      }
+    }
+    dataTask.resume()
+  }
 
-  public func getNewsList(completionHandler: @escaping(Result<NewsSource, Newsinfoerror>) ->
+  public func getNewsList(completionHandler: @escaping(Result<NewsSource, NewsInfoError>) ->
       Void) {
       let requestClass = NewsURLRequest()
       let request = requestClass.getNewsUrlRequest()
-  //    NOT PUTTING HEADERS AS THEY ARE ALREADY IN THE URL STRING
       let session = URLSession.shared
       let dataTask = session.dataTask(with: request as URLRequest) { data, _, _ in
       guard let jsonData = data else {
-        let error = Newsinfoerror.noDataAvailable("Data could not be obtained at the moment")
+        let error = NewsInfoError.noDataAvailable("Data could not be obtained at the moment")
         completionHandler(.failure(error))
-        return
-        }
-        do {
-          let decoder = JSONDecoder()
-          decoder.dateDecodingStrategy = .iso8601
-          let newsResponse = try decoder.decode(NewsSource.self, from: jsonData)
-          completionHandler(.success(newsResponse))
-        } catch {
-          let error = Newsinfoerror.canNotProcessData("Data is of unknown type")
-          completionHandler(.failure(error))
-        }
+      return
       }
-        dataTask.resume()
+      do {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        let newsResponse = try decoder.decode(NewsSource.self, from: jsonData)
+        completionHandler(.success(newsResponse))
+      } catch {
+        let error = NewsInfoError.canNotProcessData("Data is of unknown type")
+        completionHandler(.failure(error))
+      }
     }
+    dataTask.resume()
+  }
 
   public func getRandomArticle(allArticles: NewsSource) -> NewsSource.Article {
     return allArticles.articles.randomElement() ?? NewsSource.Article()
@@ -87,7 +82,7 @@ public class NewsAPICalls {
         }
         let responseJSON = String(data: data, encoding: .utf8)
         if let responseJSON = responseJSON {
-          completionHandler(responseJSON) //return the article in a completion handler
+          completionHandler(responseJSON)
           }
         }
        task.resume()
