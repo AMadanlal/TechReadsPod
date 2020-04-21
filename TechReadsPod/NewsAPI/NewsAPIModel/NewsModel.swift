@@ -12,20 +12,20 @@ import Foundation
 //https://github.com/DanKorkelia/News-API-swift/blob/master/News-API%20Playground.playground/Contents.swift
 //swiftlint:disable all
 public struct NewsSource: Codable {
-    public var status: String?
-    public var totalResults: Int?
+    public var status: String
+    public var totalResults: Int
       public struct Article: Codable {
          public var source: Source
          public var author: String?
-         public var title: String?
-         public var description: String?
+         public var title: String
+         public var description: String
          public var url: URL?
          public var urlToImage: URL?
-         public var publishedAt: String?
-         public var content: String?
+         public var publishedAt: String
+         public var content: String
            public struct Source: Codable {
              public var id: String?
-             public var name: String?
+             public var name: String
            public init() { id = ""; name = ""}
         }
         public init() {

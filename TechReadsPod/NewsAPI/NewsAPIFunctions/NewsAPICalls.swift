@@ -15,8 +15,11 @@ public class NewsAPICalls {
   public func getCustomNewsList(searchitem: String, completionHandler: @escaping(Result<NewsSource, NewsInfoError>) ->
        Void) {
     let formattedSearchString = searchitem.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
-    let requestClass = NewsURLRequest(itemtoSearch: formattedSearchString ?? searchitem)
-    let request = requestClass.getCustomNewsUrlRequest()
+    let requestClass = NewsURLPath()
+    let urlString = requestClass.buildTechNewsPath(query: formattedSearchString)
+    guard let url = URL(string: urlString) else { return }
+    var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
+    request.httpMethod = "GET"
     let session = URLSession.shared
     let dataTask = session.dataTask(with: request as URLRequest) { data, _, _ in
     guard let jsonData = data else {
@@ -39,8 +42,11 @@ public class NewsAPICalls {
 
   public func getNewsList(completionHandler: @escaping(Result<NewsSource, NewsInfoError>) ->
       Void) {
-      let requestClass = NewsURLRequest()
-      let request = requestClass.getNewsUrlRequest()
+      let requestClass = NewsURLPath()
+      let urlString = requestClass.buildTechNewsPath(query: nil)
+      guard let url = URL(string: urlString) else { return }
+      var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
+      request.httpMethod = "GET"
       let session = URLSession.shared
       let dataTask = session.dataTask(with: request as URLRequest) { data, _, _ in
       guard let jsonData = data else {
