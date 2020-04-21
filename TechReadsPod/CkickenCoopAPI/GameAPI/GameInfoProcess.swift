@@ -12,7 +12,7 @@ public class GameInfoProcess {
 
   public init() { }
 
-  func textDisplay(game: Game) -> String {
+  public func textDisplay(game: Game) -> String {
     let simplifiedGenreString = stringArrayFormatter(textArray: game.genre)
     let simplifiedPublisherString =  stringArrayFormatter(textArray: game.publisher)
     let simplifiedConsoleString = stringArrayFormatter(textArray: game.alsoAvailableOn)
@@ -42,7 +42,7 @@ public class GameInfoProcess {
   }
 
   // swiftlint:disable cyclomatic_complexity
-  func formatplatformstring(stringtoformat: String) -> String {
+  public func formatplatformstring(stringtoformat: String) -> String {
     /* here we will have to create a switch ststement for the different consoles in the format origtext -> apicalltext
      PC -> pc
      PlayStation 4 -> playstation-4
