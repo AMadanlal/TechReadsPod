@@ -18,11 +18,11 @@ public struct NewsSource: Codable {
          public var source: Source
          public var author: String?
          public var title: String
-         public var description: String
+         public var description: String?
          public var url: URL?
          public var urlToImage: URL?
          public var publishedAt: String
-         public var content: String
+         public var content: String?
            public struct Source: Codable {
              public var id: String?
              public var name: String
