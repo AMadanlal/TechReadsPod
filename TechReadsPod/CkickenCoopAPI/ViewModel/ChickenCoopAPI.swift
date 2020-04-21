@@ -86,7 +86,7 @@ public class ChickenCoopAPI {
       string: "https://chicken-coop.p.rapidapi.com/games" +
       "/\(searchItem.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "")" +
         "?platform=\(formattedplatform.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "")" +
-      "")! as URL, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
+      "")! as URL, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 12.0)
     request.httpMethod = "GET"
     request.allHTTPHeaderFields = headers
     let session = URLSession.shared
@@ -115,7 +115,7 @@ public class ChickenCoopAPI {
     let request = NSMutableURLRequest(url: NSURL(string:
     "https://chicken-coop.p.rapidapi.com/games?title=" +
       "\(searchItem.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "")" +
-      "")! as URL, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
+      "")! as URL, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 12.0)
     request.httpMethod = "GET"
     request.allHTTPHeaderFields = headers
     let session = URLSession.shared
