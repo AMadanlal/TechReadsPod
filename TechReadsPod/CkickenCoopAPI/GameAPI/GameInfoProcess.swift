@@ -42,7 +42,7 @@ public class GameInfoProcess {
   }
 
   // swiftlint:disable cyclomatic_complexity
-  public func formatplatformstring(stringtoformat: String) -> String {
+  public func formatPlatformString(stringtoformat: String) -> String {
     /* here we will have to create a switch ststement for the different consoles in the format origtext -> apicalltext
      PC -> pc
      PlayStation 4 -> playstation-4

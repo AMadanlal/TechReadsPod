@@ -13,6 +13,7 @@
 		D32801C82449952700E1DEF1 /* NewsAPICalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32801C72449952700E1DEF1 /* NewsAPICalls.swift */; };
 		D37725D3244F175E00510A35 /* GameURLPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37725D2244F175E00510A35 /* GameURLPath.swift */; };
 		D37725D5244F1D3F00510A35 /* GameErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37725D4244F1D3F00510A35 /* GameErrors.swift */; };
+		D3807784245048E200716FB6 /* HTTPConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3807783245048E200716FB6 /* HTTPConstants.swift */; };
 		D3866AA9244DA1A2004FC01D /* NewsURLPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3866AA8244DA1A2004FC01D /* NewsURLPath.swift */; };
 		D3866AAB244DA6A9004FC01D /* NewsErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3866AAA244DA6A9004FC01D /* NewsErrors.swift */; };
 		D391C08D2423AA170085C93C /* GamePresenterView.h in Headers */ = {isa = PBXBuildFile; fileRef = D391C08C2423AA170085C93C /* GamePresenterView.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -34,6 +35,7 @@
 		D32801C72449952700E1DEF1 /* NewsAPICalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPICalls.swift; sourceTree = "<group>"; };
 		D37725D2244F175E00510A35 /* GameURLPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameURLPath.swift; sourceTree = "<group>"; };
 		D37725D4244F1D3F00510A35 /* GameErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameErrors.swift; sourceTree = "<group>"; };
+		D3807783245048E200716FB6 /* HTTPConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPConstants.swift; sourceTree = "<group>"; };
 		D3866AA8244DA1A2004FC01D /* NewsURLPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsURLPath.swift; sourceTree = "<group>"; };
 		D3866AAA244DA6A9004FC01D /* NewsErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsErrors.swift; sourceTree = "<group>"; };
 		D391C08C2423AA170085C93C /* GamePresenterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GamePresenterView.h; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				D3F62E92241F4B8E002F5398 /* Preferences */,
 				D3DC3D6C240501C800D28DEA /* TechReadsPod.h */,
 				D3DC3D6D240501C800D28DEA /* Info.plist */,
+				D3807783245048E200716FB6 /* HTTPConstants.swift */,
 			);
 			path = TechReadsPod;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3DC3D752405060000D28DEA /* GameModels.swift in Sources */,
+				D3807784245048E200716FB6 /* HTTPConstants.swift in Sources */,
 				D37725D5244F1D3F00510A35 /* GameErrors.swift in Sources */,
 				D32801C3244993D400E1DEF1 /* NewsModel.swift in Sources */,
 				D3866AA9244DA1A2004FC01D /* NewsURLPath.swift in Sources */,

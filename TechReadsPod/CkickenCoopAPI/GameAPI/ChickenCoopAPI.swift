@@ -17,12 +17,12 @@ public class ChickenCoopAPI {
   public func getGameInfo(gameTitle: String, gamePlatform: String,
                           completionHandler: @escaping(Result<Game, Gameinfoerror>) -> Void) {
     let textProcessor = GameInfoProcess()
-    let formattedplatform = textProcessor.formatplatformstring(stringtoformat: gamePlatform)
+    let formattedPlatform = textProcessor.formatPlatformString(stringtoformat: gamePlatform)
     let gameURL = GameURLPath()
-    let urlString = gameURL.buildGameDetailsURLPath(name: gameTitle, platform: formattedplatform)
+    let urlString = gameURL.buildGameDetailsURLPath(name: gameTitle, platform: formattedPlatform)
     guard let url = URL(string: urlString) else { return }
     var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 12.0)
-    request.httpMethod = "GET"
+    request.httpMethod = HTTPConstants().get
     request.allHTTPHeaderFields = headers
     let session = URLSession.shared
     let dataTask = session.dataTask(with: request as URLRequest) { data, _, _ in
@@ -47,7 +47,7 @@ public class ChickenCoopAPI {
     let urlString = gameURL.buildGameListURLPath(searchQuery: searchItem)
     guard let url = URL(string: urlString) else { return }
     var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 12.0)
-    request.httpMethod = "GET"
+    request.httpMethod = HTTPConstants().get
     request.allHTTPHeaderFields = headers
     let session = URLSession.shared
     let dataTask = session.dataTask(with: request as URLRequest) { data, _, _ in
@@ -70,7 +70,7 @@ public class ChickenCoopAPI {
   public func getRandomGameListItem(gameList: GameList) -> GameListItem {
     let utillities = SavingUtilities.init()
     let platformSearch: String = utillities.loadMedium()
-    let formattedPlatformString = GameInfoProcess().formatplatformstring(stringtoformat: platformSearch)
+    let formattedPlatformString = GameInfoProcess().formatPlatformString(stringtoformat: platformSearch)
     let platformFilteredGameList = gameList.result.filter {$0.platform == formattedPlatformString}
     var randomGameListItem = GameListItem()
     randomGameListItem.platform = "pc"
