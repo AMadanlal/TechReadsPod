@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum Gameinfoerror: Error {
+public enum GameInfoError: Error {
   case noDataAvailable(String)
   case canNotProcessData(String)
 }

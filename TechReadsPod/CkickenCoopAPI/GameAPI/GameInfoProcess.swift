@@ -13,26 +13,22 @@ public class GameInfoProcess {
   public init() { }
 
   public func textDisplay(game: Game) -> String {
-    let simplifiedGenreString = stringArrayFormatter(textArray: game.genre)
-    let simplifiedPublisherString =  stringArrayFormatter(textArray: game.publisher)
-    let simplifiedConsoleString = stringArrayFormatter(textArray: game.alsoAvailableOn)
-    let fullText = """
+    return """
     Release Date: \(game.releaseDate)
-    Genres: \(simplifiedGenreString)
+    Genres: \(stringArrayFormatter(textArray: game.genre))
     Developer: \(game.developer)
-    Publisher: \(simplifiedPublisherString)
-    Also Available on: \(simplifiedConsoleString)
+    Publisher: \(stringArrayFormatter(textArray: game.publisher))
+    Also Available on: \(stringArrayFormatter(textArray: game.alsoAvailableOn))
     Rating: \(game.rating)
     Description: \(game.description)
     Score: \(game.score)
     """
-    return fullText
   }
 
   public func stringArrayFormatter(textArray: [String]) -> String {
-    var formattedString: String = ""
-    for text in textArray {
-      if text == textArray[textArray.count-1] {
+        var formattedString: String = ""
+    for (index, text) in textArray.enumerated() {
+      if index == textArray.count-1 {
         formattedString += text
       } else {
         formattedString += text + ", "

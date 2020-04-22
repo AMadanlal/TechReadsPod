@@ -14,16 +14,21 @@ public class ChickenCoopAPI {
 
   public init() { }
 
+  func getRequest(url: URL) -> URLRequest {
+    var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 12.0)
+    request.httpMethod = HTTPConstants().get
+    request.allHTTPHeaderFields = headers
+    return request
+  }
+
   public func getGameInfo(gameTitle: String, gamePlatform: String,
-                          completionHandler: @escaping(Result<Game, Gameinfoerror>) -> Void) {
+                          completionHandler: @escaping(Result<Game, GameInfoError>) -> Void) {
     let textProcessor = GameInfoProcess()
     let formattedPlatform = textProcessor.formatPlatformString(stringtoformat: gamePlatform)
     let gameURL = GameURLPath()
     let urlString = gameURL.buildGameDetailsURLPath(name: gameTitle, platform: formattedPlatform)
     guard let url = URL(string: urlString) else { return }
-    var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 12.0)
-    request.httpMethod = HTTPConstants().get
-    request.allHTTPHeaderFields = headers
+    let request = getRequest(url: url)
     let session = URLSession.shared
     let dataTask = session.dataTask(with: request as URLRequest) { data, _, _ in
       guard let jsonData = data else {
@@ -42,13 +47,11 @@ public class ChickenCoopAPI {
     dataTask.resume()
   }
 
-  public func getGameList(searchItem: String, completionHandler: @escaping(Result<GameList, Gameinfoerror>) -> Void) {
+  public func getGameList(searchItem: String, completionHandler: @escaping(Result<GameList, GameInfoError>) -> Void) {
     let gameURL = GameURLPath()
     let urlString = gameURL.buildGameListURLPath(searchQuery: searchItem)
     guard let url = URL(string: urlString) else { return }
-    var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 12.0)
-    request.httpMethod = HTTPConstants().get
-    request.allHTTPHeaderFields = headers
+    let request = getRequest(url: url)
     let session = URLSession.shared
     let dataTask = session.dataTask(with: request as URLRequest) { data, _, _ in
       guard let jsonData = data else {
@@ -75,13 +78,9 @@ public class ChickenCoopAPI {
     var randomGameListItem = GameListItem()
     randomGameListItem.platform = "pc"
     randomGameListItem.title = "Crysis"
-    if platformFilteredGameList.isEmpty {
-      guard let validListItem = gameList.result.randomElement() else { return randomGameListItem}
-      randomGameListItem = validListItem
-    } else {
-      guard let validListItem = platformFilteredGameList.randomElement() else { return randomGameListItem}
-      randomGameListItem = validListItem
-    }
+    guard let validListItem = platformFilteredGameList.isEmpty ? gameList.result.randomElement() :
+                              platformFilteredGameList.randomElement() else { return randomGameListItem }
+    randomGameListItem = validListItem
     return randomGameListItem
   }
 

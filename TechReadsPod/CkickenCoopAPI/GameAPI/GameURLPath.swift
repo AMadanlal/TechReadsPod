@@ -11,8 +11,6 @@ import Foundation
 class GameURLPath {
   let gameURL = "https://chicken-coop.p.rapidapi.com/games"
 
-  public init() { }
-
   func buildGameDetailsURLPath(name: String, platform: String) -> String {
     let gameName = name.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
     let itemPlatform = platform.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
