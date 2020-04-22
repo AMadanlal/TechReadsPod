@@ -8,13 +8,6 @@
 
 import Foundation
 
-// enum for errors
-public enum Gameinfoerror: Error {
-  case noDataAvailable
-  case canNotProcessData
-}
-
-//  struct for the gamelist items
   public struct GameListItem: Decodable {
     public var title: String
     public var platform: String
@@ -24,7 +17,6 @@ public enum Gameinfoerror: Error {
     }
   }
 
-//  struct for the gamelist
   public struct GameList: Decodable {
     public var query: String
     public var executionTime: Double
@@ -47,7 +39,6 @@ public enum Gameinfoerror: Error {
     }
   }
 
-//  this is a struct to store the individual game data
   public struct Game: Decodable {
     public var title: String
     public var releaseDate: String
