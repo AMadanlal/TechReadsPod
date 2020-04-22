@@ -69,8 +69,9 @@ public class ChickenCoopAPI {
 
   public func getRandomGameListItem(gameList: GameList) -> GameListItem {
     let utillities = SavingUtilities.init()
-    let platformSearch = utillities.loadMedium()
-    let platformFilteredGameList = gameList.result.filter {$0.platform == platformSearch}
+    let platformSearch: String = utillities.loadMedium()
+    let formattedPlatformString = GameInfoProcess().formatplatformstring(stringtoformat: platformSearch)
+    let platformFilteredGameList = gameList.result.filter {$0.platform == formattedPlatformString}
     var randomGameListItem = GameListItem()
     randomGameListItem.platform = "pc"
     randomGameListItem.title = "Crysis"
