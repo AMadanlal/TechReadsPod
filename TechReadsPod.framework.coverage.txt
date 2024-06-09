@@ -90,7 +90,7 @@
    22|       |  public var gamelist = GameList()
    23|       |//  this is the headers that include the host and the unique key given to a user to access the api
    24|       |  let headers = ["x-rapidapi-host": "chicken-coop.p.rapidapi.com",
-   25|       |                  "x-rapidapi-key": "20e0c6a126msh31a394fe35837d8p1d97f3jsn9bf6099a1b56"]
+   25|       |                  "x-rapidapi-key": ""]
    26|       |
    27|     18|  public init(searched: String, platform: String) {
    28|     18|    searchItem = searched
